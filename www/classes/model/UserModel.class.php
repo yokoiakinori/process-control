@@ -1,4 +1,6 @@
 <?php
+
+namespace ProcessControl\model;
 final class UserModel
 {
     private $_id=null;
@@ -106,3 +108,4 @@ final class UserModel
         return $this->_team_id;
     }
 }
+?>
