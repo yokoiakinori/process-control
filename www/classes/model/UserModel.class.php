@@ -1,6 +1,9 @@
 <?php
 
 namespace ProcessControl\model;
+
+use DateTime;
+use ProcessControl\dao\UserDao;
 final class UserModel
 {
     const LOCK_COUNT = 3;
@@ -19,23 +22,74 @@ final class UserModel
 
     public function getModelByEmail($email)
     {
-       return $this;
+       $dao = UserDao::getDaoFromEmail($email);
+       return (isset($dao[0]))?$this->setProperty(reset($dao)):null;
     }
     public function checkPassword($password)
     {
-        return true;
+        $hash = $this->getPassword($password);
+        return password_verify($password,$hash);
     }
     public function loginFailureReset()
     {
+        $count = $this->getLogin_failure_count();
+        if(0 < $count){
+            $this->setLogin_failure_count(0)->setLogin_failure_datetime(null);
+            return $this->save();
+        }
         return true;
     }
     public function loginFailureIncrement()
     {
+        $count = $this->getLogin_failure_count();
+        if(self::LOCK_COUNT > $count){
+            $now = (new \DateTime())->format('Y-m-d H:i:s');
+            $this->setLogin_failure_count(1+$count)->setLogin_failure_datetime($now);
+            return $this->save();
+        }
         return true;
     }
     public function isAccountLock()
     {
+        $count = $this->getLogin_failure_count();
+        $datetime = $this->getLogin_failure_datetime();
+
+        $lastFailureDatetime = new \DateTime($datetime);
+        $interval = new \DateInterval(
+            sprintf('PT%dM',self::LOCK_MINUTE)
+        );
+        $lastFailureDatetime->add($interval);
+
+        if($lastFailureDatetime > new DateTime() && self::LOCK_COUNT<=$count){
+            return true;
+        }
         return false;
+    }
+
+
+    private function setProperty(array $arrDao)
+    {
+        $this->setId($arrDao['id'])
+        ->setName($arrDao['name'])
+        ->setEmail($arrDao['email'])
+        ->setPassword($arrDao['password'])
+        ->setToken($arrDao['token'])
+        ->setLogin_failure_count($arrDao['login_failure_count'])
+        ->setLogin_failure_datetime($arrDao['login_failure_datetime'])
+        ->setDelete_flag($arrDao['delete_flag'])
+        ->setPosition_id($arrDao['position_id'])
+        ->setTeam_id($arrDao['team_id']);
+        return $this;
+    }
+
+    public function save()
+    {
+        return UserDao::save($this);
+    }
+
+    public function create()
+    {
+        return UserDao::insert($this);
     }
 
     
