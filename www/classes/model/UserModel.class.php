@@ -3,6 +3,8 @@
 namespace ProcessControl\model;
 final class UserModel
 {
+    const LOCK_COUNT = 3;
+    const LOCK_MINUTE = 30;//分
     private $_id=null;
     private $_name=null;
     private $_email=null;
@@ -13,6 +15,28 @@ final class UserModel
     private $_delete_flag=null;
     private $_position_id=null;
     private $_team_id=null;
+
+
+    public function getModelByEmail($email)
+    {
+       return $this;
+    }
+    public function checkPassword($password)
+    {
+        return true;
+    }
+    public function loginFailureReset()
+    {
+        return true;
+    }
+    public function loginFailureIncrement()
+    {
+        return true;
+    }
+    public function isAccountLock()
+    {
+        return false;
+    }
 
     
     public function setId($id)
@@ -107,5 +131,8 @@ final class UserModel
     {
         return $this->_team_id;
     }
+
+
+
 }
 ?>
