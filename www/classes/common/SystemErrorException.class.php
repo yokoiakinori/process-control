@@ -2,12 +2,12 @@
 namespace ProcessControl\common;
 class SystemErrorException extends \Exception
 {
-    public function __construct($code,\Exception $previous=null)
+    public function __construct($code,array $args=[])
     {
         $message = ExceptionCode::getMessage($code);
-        self::writeLog($message);
-        self::sendMail($message);
-        parent::__construct('システムエラーが発生しました。',$code,$previous);
+        self::writeLog(vsprintf($message, $args));
+        self::sendMail(vsprintf($message, $args));
+        parent::__construct('システムエラーが発生しました。',$code);
     }
 
     static private function writeLog($message)
