@@ -3,14 +3,6 @@ namespace ProcessControl;
 
 use ProcessControl\common\Template;
 use ProcessControl\controller\LoginController;
-
-define('LAYOUT','index');
-try{
-    require_once '../common.php';
-    LoginController::login();
-}catch(\Exception $e){
-    Template::exception($e);
-}finally{
-    Template::display();
-}
+require_once '../common.php';
+Template::display('index.tpl.html');
 ?>
