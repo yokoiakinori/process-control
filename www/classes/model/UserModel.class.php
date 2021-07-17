@@ -34,6 +34,11 @@ final class UserModel extends UserModelBase
         if(self::LOCK_COUNT > $count){
             $now = (new \DateTime())->format('Y-m-d H:i:s');
             $this->setLogin_failure_count(1+$count)->setLogin_failure_datetime($now);
+
+            if(self::LOCK_COUNT === 1 + $count){
+                $token = sha1(uniqid());
+                $this->setToken($token);
+            }
             return $this->save();
         }
         return true;
@@ -53,6 +58,11 @@ final class UserModel extends UserModelBase
             return true;
         }
         return false;
+    }
+    public function getModelByToken($token)
+    {
+        $dao = UserDao::getDaoFromToken($token);
+        return (isset($dao[0]))?$this->setProperty(reset($dao)):null;
     }
 }
 ?>

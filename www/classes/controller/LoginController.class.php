@@ -90,4 +90,31 @@ class LoginController
 
         throw new InvalidErrorException(ExceptionCode::INVALID_LOCK);
     }
+
+    static public function isAccountLock()
+    {
+        $token = filter_input(INPUT_GET,'token');
+        $objUserModel = new UserModel();
+        $objUserModel->getModelByToken($token);
+        return $objUserModel->isAccountLock();
+    }
+
+    static public function unlock()
+    {
+        if (filter_input_array(INPUT_POST==null)) {
+            return;
+        }
+
+        $token = filter_input(INPUT_GET,'token');
+
+        Db::transaction();
+        $objUserModel = new UserModel();
+        $objUserModel->getModelByToken($token);
+        $objUserModel->setLogin_failure_count(0)
+            ->setLogin_failure_datetime(NULL)
+            ->setToken('')
+            ->save();
+        Db::commit();
+        return true;
+    }
 }

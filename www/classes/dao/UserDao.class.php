@@ -59,6 +59,28 @@ class UserDao
         return Db::select($sql,$arr);
     }
 
+    public static function getDaoFromToken($token)
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= ", `email`";
+        $sql .= ", `password`";
+        $sql .= ", `token`";
+        $sql .= ", `login_failure_count`";
+        $sql .= ", `login_failure_datetime`";
+        $sql .= ", `delete_flag`";
+        $sql .= ", `position_id`";
+        $sql .= ", `team_id` ";
+        $sql .= "FROM `user` ";
+        $sql .= "WHERE `token` = :token ";
+        $sql .= "WHERE `delete_flag` = 0 ";
+
+        $arr = array();
+        $arr[':token'] = $token;
+        return Db::select($sql,$arr);
+    }
+
     public static function save(UserModel $objUserModel)
     {
         $sql = "UPDATE ";
