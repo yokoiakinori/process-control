@@ -5,6 +5,8 @@ use \ProcessControl\model\UserModel;
 use \ProcessControl\common\Db;
 use \ProcessControl\common\InvalidErrorException;
 use \ProcessControl\common\ExceptionCode;
+use \ProcessControl\common\Log;
+use \ProcessControl\common\Mail;
 
 class LoginController
 {
@@ -39,6 +41,8 @@ class LoginController
         if(!$objUserModel->checkPassword($password)){
             $objUserModel->loginFailureIncrement();
             Db::commit();
+            self::noticeAccountLockForMail($objUserModel);
+            self::noticeAccountLockForCookie();
             throw new InvalidErrorException(ExceptionCode::INVALID_LOGIN_FAIL);
         }
 
@@ -71,5 +75,19 @@ class LoginController
         $_SESSION = [];
         session_destroy();
         header('Location: /');
+    }
+
+    private static function noticeAccountLockForMail(UserModel $objUserModel)
+    {
+        if(UserModel::LOCK_COUNT>$objUserModel->getLogin_failure_count()){
+            return;
+        }
+
+        $strRecipient=$objUserModel->getEmail();
+        $strSubject='アカウントをロックしました。';
+        $strBody='例文';
+        Mail::send($strRecipient, $strSubject,$strBody);
+
+        throw new InvalidErrorException(ExceptionCode::INVALID_LOCK);
     }
 }
