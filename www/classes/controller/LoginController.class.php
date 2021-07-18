@@ -5,6 +5,7 @@ use \ProcessControl\model\UserModel;
 use \ProcessControl\common\Db;
 use \ProcessControl\common\InvalidErrorException;
 use \ProcessControl\common\ExceptionCode;
+use \ProcessControl\common\Csrf;
 use \ProcessControl\common\Log;
 use \ProcessControl\common\Mail;
 
@@ -18,6 +19,8 @@ class LoginController
         if(!filter_input_array(INPUT_POST)){
             return;
         }
+
+        Csrf::check();
 
         $email = filter_input(INPUT_POST,'email');
         $password = filter_input(INPUT_POST,'password');
@@ -42,7 +45,6 @@ class LoginController
             $objUserModel->loginFailureIncrement();
             Db::commit();
             self::noticeAccountLockForMail($objUserModel);
-            self::noticeAccountLockForCookie();
             throw new InvalidErrorException(ExceptionCode::INVALID_LOGIN_FAIL);
         }
 
@@ -104,6 +106,8 @@ class LoginController
         if (filter_input_array(INPUT_POST==null)) {
             return;
         }
+
+        Csrf::check();
 
         $token = filter_input(INPUT_GET,'token');
 

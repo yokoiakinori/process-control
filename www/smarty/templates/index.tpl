@@ -17,7 +17,7 @@
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">サインインしてセッションを開始する</p>
-            <form action="" method="post">
+            {form method="post"}
                 <div class="form-group has-feedback">
                     <input type="text" name="email" class="form-control" placeholder="メールアドレス">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -33,7 +33,7 @@
                         </button>
                     </div>
                 </div>
-            </form>
+            {/form}
             <a href="remind.php">パスワードを忘れましたか？</a>
         </div>
         <!-- /.login-box-body -->

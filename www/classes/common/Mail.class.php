@@ -13,7 +13,6 @@ class Mail
 
     public static function send($strRecipient,$strSubject,$strBody,array $binAttachment=[])
     {
-        Log::write('*** send_mail ***');
         if (empty($strRecipient)) {
             throw new \Exception('宛先が設定されていません。');
         }
