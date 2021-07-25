@@ -20,7 +20,7 @@ class LoginController
             return;
         }
 
-        Csrf::check();
+        Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
 
         $email = filter_input(INPUT_POST,'email');
         $password = filter_input(INPUT_POST,'password');
@@ -39,7 +39,7 @@ class LoginController
             Db::commit();
             throw new InvalidErrorException(ExceptionCode::INVALID_LOCK);
         }
-
+        
         //パスワードチェック
         if(!$objUserModel->checkPassword($password)){
             $objUserModel->loginFailureIncrement();
@@ -107,7 +107,7 @@ class LoginController
             return;
         }
 
-        Csrf::check();
+        Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
 
         $token = filter_input(INPUT_GET,'token');
 

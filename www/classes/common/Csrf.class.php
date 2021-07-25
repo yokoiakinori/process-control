@@ -3,29 +3,20 @@ namespace ProcessControl\common;
 class Csrf
 {
   private static $token = null;
-  static private function init()
-  {
-    self::$token = sha1(uniqid());
-  }
+  const HASH_ALGO = 'sha256';
 
   public static function get()
     {
-        if (is_null(self::$token)) {
-            self::init();
-        }
-        $_SESSION['csrf_token'] = self::$token;
-        return self::$token;
+        return hash(self::HASH_ALGO, session_id());
     }
 
-    public static function check()
+    public static function check($token)
     {
-        $csrf_token = (isset($_SESSION['csrf_token'])) ? $_SESSION['csrf_token'] : null;
-        $_SESSION['csrf_token'] = null;
-
-        if (filter_input(INPUT_POST, 'csrf_token') !== $csrf_token) {
+        $success = self::get() === $token;
+        if (!$success) {
             // 二重送信されたので処理を中断しました。
             throw new InvalidErrorException(ExceptionCode::INVALID_CSRF_ERR);
         }
-        return true;
+        return $success;
     }
 }

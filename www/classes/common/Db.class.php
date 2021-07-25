@@ -6,7 +6,7 @@ use PDO;
 
 class Db 
 {
-    const DSN = 'mysql:dbname=%s;host=localhost;charset=utf-8';
+    const DSN = 'mysql:dbname=%s;host=db;charset=utf8';
     const DBNAME = 'process_control';
     const USER_NAME = 'root';
     const PASSWORD = 'secret';

@@ -16,7 +16,7 @@ final class UserModel extends UserModelBase
     }
     public function checkPassword($password)
     {
-        $hash = $this->getPassword($password);
+        $hash = $this->getPassword();
         return password_verify($password,$hash);
     }
     public function loginFailureReset()

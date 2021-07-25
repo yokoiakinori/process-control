@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-17 09:00:12
+/* Smarty version 3.1.39, created on 2021-07-18 19:40:40
   from '/var/www/smarty/templates/index.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60f21d8c749989_66619759',
+  'unifunc' => 'content_60f4052833c761_52241892',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     'a1db3bff38548ca34e9b9313bd55a24657e9c663' => 
     array (
       0 => '/var/www/smarty/templates/index.tpl',
-      1 => 1626479968,
+      1 => 1626604583,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60f21d8c749989_66619759 (Smarty_Internal_Template $_smarty_tpl) {
+function content_60f4052833c761_52241892 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_107232591960f21d8c735286_39513464', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_203193010760f405282bb027_09133356', 'meta');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_49508293760f21d8c745be5_21647840', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_165199853360f405282cb4f6_26237597', 'content');
 ?>
 
 <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_183992820260f21d8c748c26_35311720', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_194738317260f4052833bf86_55487599', 'script');
 }
 /* {block 'meta'} */
-class Block_107232591960f21d8c735286_39513464 extends Smarty_Internal_Block
+class Block_203193010760f405282bb027_09133356 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_107232591960f21d8c735286_39513464',
+    0 => 'Block_203193010760f405282bb027_09133356',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -56,15 +56,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_49508293760f21d8c745be5_21647840 extends Smarty_Internal_Block
+class Block_165199853360f405282cb4f6_26237597 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_49508293760f21d8c745be5_21647840',
+    0 => 'Block_165199853360f405282cb4f6_26237597',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/block.form.php','function'=>'smarty_block_form',),));
 ?>
 
     <div class="login-box">
@@ -77,7 +78,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         <!-- /.login-logo -->
         <div class="login-box-body">
             <p class="login-box-msg">サインインしてセッションを開始する</p>
-            <form action="" method="post">
+            <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
+$_block_repeat=true;
+echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
                 <div class="form-group has-feedback">
                     <input type="text" name="email" class="form-control" placeholder="メールアドレス">
                     <span class="glyphicon glyphicon-envelope form-control-feedback"></span>
@@ -93,7 +98,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                         </button>
                     </div>
                 </div>
-            </form>
+            <?php $_block_repeat=false;
+echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
             <a href="remind.php">パスワードを忘れましたか？</a>
         </div>
         <!-- /.login-box-body -->
@@ -104,12 +112,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_183992820260f21d8c748c26_35311720 extends Smarty_Internal_Block
+class Block_194738317260f4052833bf86_55487599 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_183992820260f21d8c748c26_35311720',
+    0 => 'Block_194738317260f4052833bf86_55487599',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
