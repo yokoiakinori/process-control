@@ -11,7 +11,7 @@ use \ProcessControl\common\Mail;
 
 class LoginController
 {
-    const TARGET_PAGE = '/dashbord.php';
+    const TARGET_PAGE = '/dashboard.php';
     const LOGINUSER = 'loginUserModel';
 
     static public function login()
@@ -53,15 +53,16 @@ class LoginController
         Db::commit();
 
         session_regenerate_id(true);
-        $_SESSION[self::LOGINUSER] = $objUserModel;
+        $_SESSION[self::LOGINUSER] = serialize($objUserModel);
 
         header(sprintf("location: %s", self::TARGET_PAGE));
     }
 
     static public function  checkLogin()
     {
-        $objUserModel = (isset($_SESSION[self::LOGINUSER]))? $_SESSION[self::LOGINUSER] : null;
-        if(is_object($objUserModel)&&0<$objUserModel->getUserId()){
+        $unserialize = unserialize($_SESSION[self::LOGINUSER]);
+        $objUserModel = (isset($unserialize))? $unserialize : null;
+        if(is_object($objUserModel)&&0<$objUserModel->getId()){
             return;
         }
         header('Location: /');
