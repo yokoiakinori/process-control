@@ -70,7 +70,7 @@ class LoginController
 
     static public function  getLoginUser()
     {
-        return $_SESSION[self::LOGINUSER];
+        return unserialize($_SESSION[self::LOGINUSER]);
     }
 
     static public function  logout()
