@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-26 23:24:42
+/* Smarty version 3.1.39, created on 2021-07-27 23:33:53
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_60fec5aac3e1c1_26417348',
+  'unifunc' => 'content_61001951d04b32_61468590',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1627309475,
+      1 => 1627396431,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_60fec5aac3e1c1_26417348 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61001951d04b32_61468590 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40863489360fec5aac37c54_23343187', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_45398923661001951cf9475_55108988', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_205348141460fec5aac3ca57_76106458', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37706797861001951d02067_93003063', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_101474483260fec5aac3d9b0_40858295', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_117769155761001951d03b55_04020022', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_40863489360fec5aac37c54_23343187 extends Smarty_Internal_Block
+class Block_45398923661001951cf9475_55108988 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_40863489360fec5aac37c54_23343187',
+    0 => 'Block_45398923661001951cf9475_55108988',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_205348141460fec5aac3ca57_76106458 extends Smarty_Internal_Block
+class Block_37706797861001951d02067_93003063 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_205348141460fec5aac3ca57_76106458',
+    0 => 'Block_37706797861001951d02067_93003063',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -73,29 +73,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
         ></a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="index3.html" class="nav-link">Home</a>
+        <a href="dashboard.php" class="nav-link">Home</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <a href="#" class="nav-link">Contact</a>
+        <a href="job-list.php" class="nav-link">ジョブ一覧</a>
       </li>
     </ul>
-
-    <!-- SEARCH FORM -->
-    <form class="form-inline ml-3">
-      <div class="input-group input-group-sm">
-        <input
-          class="form-control form-control-navbar"
-          type="search"
-          placeholder="Search"
-          aria-label="Search"
-        />
-        <div class="input-group-append">
-          <button class="btn btn-navbar" type="submit">
-            <i class="fas fa-search"></i>
-          </button>
-        </div>
-      </div>
-    </form>
 
     <!-- Right navbar links -->
     <ul class="navbar-nav ml-auto">
@@ -308,7 +291,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">Starter Page</h1>
+            <h1 class="m-0 text-dark">タスク一覧</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
@@ -427,12 +410,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_101474483260fec5aac3d9b0_40858295 extends Smarty_Internal_Block
+class Block_117769155761001951d03b55_04020022 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_101474483260fec5aac3d9b0_40858295',
+    0 => 'Block_117769155761001951d03b55_04020022',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
