@@ -18,6 +18,11 @@
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
       rel="stylesheet"
     />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
     {block name='meta'} {/block}
   </head>
   <body class="hold-transition sidebar-mini">
@@ -39,22 +44,19 @@
     <script src="plugins/select2/js/select2.full.min.js"></script>
     <script src="plugins/moment/moment.min.js"></script>
     <script src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"></script>
+    <!-- Tempusdominus Bootstrap 4 -->
+    <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <script>
       $(function () {
-        //Initialize Select2 Elements
-        $(".select2").select2();
-
-        //Initialize Select2 Elements
-        $(".select2bs4").select2({
-          theme: "bootstrap4",
+        //Date picker
+        $("#reservationdate").datetimepicker({
+          format: "L",
         });
 
-        //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", { placeholder: "dd/mm/yyyy" });
-        //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", { placeholder: "mm/dd/yyyy" });
-        //Money Euro
-        $("[data-mask]").inputmask();
+        //Date and time picker
+        $("#reservationdatetime").datetimepicker({
+          icons: { time: "far fa-clock" },
+        });
 
         //Date range picker
         $("#reservation").daterangepicker();

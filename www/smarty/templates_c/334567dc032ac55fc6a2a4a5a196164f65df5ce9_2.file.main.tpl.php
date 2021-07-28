@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-28 00:57:35
+/* Smarty version 3.1.39, created on 2021-07-28 21:43:48
   from '/var/www/smarty/templates/layout/main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61002cef47a0a9_07534522',
+  'unifunc' => 'content_61015104817246_79379393',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '334567dc032ac55fc6a2a4a5a196164f65df5ce9' => 
     array (
       0 => '/var/www/smarty/templates/layout/main.tpl',
-      1 => 1627401453,
+      1 => 1627476223,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:widget/exception.tpl' => 1,
   ),
 ),false)) {
-function content_61002cef47a0a9_07534522 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61015104817246_79379393 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -45,15 +45,20 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
       href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700"
       rel="stylesheet"
     />
+    <!-- Tempusdominus Bootstrap 4 -->
+    <link
+      rel="stylesheet"
+      href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
+    />
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_95884189461002cef465768_36289856', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1455073820610151048073c2_29270925', 'meta');
 ?>
 
   </head>
   <body class="hold-transition sidebar-mini">
     <?php $_smarty_tpl->_subTemplateRender('file:widget/exception.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40117525061002cef475121_10401753', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1787420289610151048128b8_45754621', 'content');
 ?>
 
 
@@ -87,23 +92,22 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40117525061002cef4
     <?php echo '<script'; ?>
  src="plugins/inputmask/min/jquery.inputmask.bundle.min.js"><?php echo '</script'; ?>
 >
+    <!-- Tempusdominus Bootstrap 4 -->
+    <?php echo '<script'; ?>
+ src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"><?php echo '</script'; ?>
+>
     <?php echo '<script'; ?>
 >
       $(function () {
-        //Initialize Select2 Elements
-        $(".select2").select2();
-
-        //Initialize Select2 Elements
-        $(".select2bs4").select2({
-          theme: "bootstrap4",
+        //Date picker
+        $("#reservationdate").datetimepicker({
+          format: "L",
         });
 
-        //Datemask dd/mm/yyyy
-        $("#datemask").inputmask("dd/mm/yyyy", { placeholder: "dd/mm/yyyy" });
-        //Datemask2 mm/dd/yyyy
-        $("#datemask2").inputmask("mm/dd/yyyy", { placeholder: "mm/dd/yyyy" });
-        //Money Euro
-        $("[data-mask]").inputmask();
+        //Date and time picker
+        $("#reservationdatetime").datetimepicker({
+          icons: { time: "far fa-clock" },
+        });
 
         //Date range picker
         $("#reservation").daterangepicker();
@@ -579,19 +583,19 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_40117525061002cef4
     </div>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_139047079761002cef478af6_73484761', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_161140655861015104815f95_08388801', 'script');
 ?>
 
   </body>
 </html>
 <?php }
 /* {block 'meta'} */
-class Block_95884189461002cef465768_36289856 extends Smarty_Internal_Block
+class Block_1455073820610151048073c2_29270925 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_95884189461002cef465768_36289856',
+    0 => 'Block_1455073820610151048073c2_29270925',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -601,12 +605,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_40117525061002cef475121_10401753 extends Smarty_Internal_Block
+class Block_1787420289610151048128b8_45754621 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_40117525061002cef475121_10401753',
+    0 => 'Block_1787420289610151048128b8_45754621',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -616,12 +620,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_139047079761002cef478af6_73484761 extends Smarty_Internal_Block
+class Block_161140655861015104815f95_08388801 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_139047079761002cef478af6_73484761',
+    0 => 'Block_161140655861015104815f95_08388801',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
