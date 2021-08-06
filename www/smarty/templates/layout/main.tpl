@@ -50,12 +50,13 @@
       $(function () {
         //Date picker
         $("#reservationdate").datetimepicker({
-          format: "L",
+          format: "YYYY/MM/DD",
         });
 
         //Date and time picker
         $("#reservationdatetime").datetimepicker({
           icons: { time: "far fa-clock" },
+          format:"YYYY/MM/DD"
         });
 
         //Date range picker
@@ -65,7 +66,7 @@
           timePicker: true,
           timePickerIncrement: 30,
           locale: {
-            format: "MM/DD/YYYY hh:mm A",
+            format: "YYYY/MM/DD hh:mm A",
           },
         });
         //Date range as a button

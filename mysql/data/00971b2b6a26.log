@@ -1,0 +1,19 @@
+/usr/sbin/mysqld, Version: 8.0.26 (MySQL Community Server - GPL). started with:
+Tcp port: 3306  Unix socket: /var/run/mysqld/mysqld.sock
+Time                 Id Command    Argument
+2021-08-05T20:43:26.170408Z	  528 Connect	root@172.19.0.3 on process_control using TCP/IP
+2021-08-05T20:43:26.176122Z	  528 Query	START TRANSACTION
+2021-08-05T20:43:26.180055Z	  528 Query	INSERT INTO `job` (`id`, `name`, `overview`, `dead_line`, `rep_id`, `is_finished`, `createdat`) VALUES (NULL , 'よこい' , 'aaaaaa' , '2021/08/06' , '1' , '0' , '2021-08-06' )
+2021-08-05T20:43:26.231201Z	  528 Query	ROLLBACK
+2021-08-05T20:43:26.235426Z	  528 Quit	
+2021-08-06T10:10:24.350170Z	  529 Connect	root@172.19.0.3 on process_control using TCP/IP
+2021-08-06T10:10:24.351796Z	  529 Query	START TRANSACTION
+2021-08-06T10:10:24.355077Z	  529 Query	INSERT INTO `job` (`id`, `name`, `overview`, `dead_line`, `rep_id`, `is_finished`, `createdat`) VALUES (NULL , 'よこい' , 'aaaaaa' , '2021/08/06' , '1' , '0' , '2021-08-06' )
+2021-08-06T10:10:24.358695Z	  529 Query	COMMIT
+2021-08-06T10:10:24.426372Z	  529 Quit	
+2021-08-06T10:10:48.419108Z	  530 Connect	root@localhost on process_control using Socket
+2021-08-06T10:10:48.474108Z	  530 Query	show databases
+2021-08-06T10:10:48.478971Z	  530 Query	show tables
+2021-08-06T10:10:48.482539Z	  530 Field List	job 
+2021-08-06T10:10:48.484023Z	  530 Field List	user 
+2021-08-06T10:10:48.486678Z	  530 Query	select * from job

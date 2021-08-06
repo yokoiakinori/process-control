@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-28 21:48:15
+/* Smarty version 3.1.39, created on 2021-08-06 04:59:02
   from '/var/www/smarty/templates/job-create.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6101520fbe5379_49012219',
+  'unifunc' => 'content_610c430636bc68_91623120',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '335bdefec54e87a8f8176c5455987c419daf177d' => 
     array (
       0 => '/var/www/smarty/templates/job-create.tpl',
-      1 => 1627476492,
+      1 => 1628193528,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6101520fbe5379_49012219 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610c430636bc68_91623120 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5047457446101520fbdc2c8_11473869', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2059025860610c4306300c40_32472187', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16103147316101520fbe2a29_02388852', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1554352273610c430630b3c5_13538643', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20534415866101520fbe4b02_01358406', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1726972253610c430636b373_20903562', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_5047457446101520fbdc2c8_11473869 extends Smarty_Internal_Block
+class Block_2059025860610c4306300c40_32472187 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_5047457446101520fbdc2c8_11473869',
+    0 => 'Block_2059025860610c4306300c40_32472187',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,15 +51,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_16103147316101520fbe2a29_02388852 extends Smarty_Internal_Block
+class Block_1554352273610c430630b3c5_13538643 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_16103147316101520fbe2a29_02388852',
+    0 => 'Block_1554352273610c430630b3c5_13538643',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/block.form.php','function'=>'smarty_block_form',),));
 ?>
 
 <div class="wrapper">
@@ -321,13 +322,18 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
               <div class="card-header">
                 <h3 class="card-title">ジョブ作成フォーム</h3>
               </div>
-              <form role="form">
+              <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
+$_block_repeat=true;
+echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="jobtitle">ジョブ名</label>
                     <input
                       type="text"
                       class="form-control"
+                      name="name"
                       placeholder="ジョブ名を入力してください。"
                     />
                   </div>
@@ -336,6 +342,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                     <textarea
                       rows="3"
                       class="form-control"
+                      name="overview"
                       placeholder="作業内容を入力してください。"
                     ></textarea>
                   </div>
@@ -349,6 +356,7 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                       <input
                         type="text"
                         class="form-control datetimepicker-input"
+                        name="dead_line"
                         data-target="#reservationdate"
                       />
                       <div
@@ -366,7 +374,10 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">送信</button>
                 </div>
-              </form>
+              <?php $_block_repeat=false;
+echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
             </div>
           </div>
           <!-- /.col-md-6 -->
@@ -408,12 +419,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_20534415866101520fbe4b02_01358406 extends Smarty_Internal_Block
+class Block_1726972253610c430636b373_20903562 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_20534415866101520fbe4b02_01358406',
+    0 => 'Block_1726972253610c430636b373_20903562',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

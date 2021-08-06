@@ -7,8 +7,9 @@ use ProcessControl\model\JobModel;
 
 class JobDao
 {
-    public static function insert(JobModel $objJobModel)
+    public static function insert($insertObj)
     {
+        define('defaultRep',1);
         $sql = "INSERT INTO ";
         $sql .= "`job` ";
         $sql .= "(";
@@ -30,16 +31,13 @@ class JobDao
         $sql .= ")";
 
         $arr = array();
-        $arr[':id'] = $objJobModel->getId();
-        $arr[':name'] = $objJobModel->getName();
-        $arr[':overview'] = $objJobModel->getEmail();
-        $arr[':dead_line'] = $objJobModel->getPassword();
-        $arr[':rep_id'] = $objJobModel->getToken();
-        $arr[':login_failure_count'] = $objJobModel->getLogin_failure_count();
-        $arr[':login_failure_datetime'] = $objJobModel->getLogin_failure_datetime();
-        $arr[':delete_flag'] = $objJobModel->getDelete_flag();
-        $arr[':position_id'] = $objJobModel->getPosition_id();
-        $arr[':team_id'] = $objJobModel->getTeam_id();
+        $arr[':name'] = $insertObj["name"];
+        $arr[':overview'] = $insertObj["overview"];
+        $arr[':dead_line'] = $insertObj["dead_line"];
+        $arr[':rep_id'] = defaultRep;
+        $arr[':is_finished'] = 0;
+        $arr[':createdat'] = date('Y-m-d');
+
 
         return Db::insert($sql,$arr);
     }

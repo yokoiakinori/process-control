@@ -39,7 +39,6 @@ class LoginController
             Db::commit();
             throw new InvalidErrorException(ExceptionCode::INVALID_LOCK);
         }
-        
         //パスワードチェック
         if(!$objUserModel->checkPassword($password)){
             $objUserModel->loginFailureIncrement();

@@ -260,13 +260,14 @@
               <div class="card-header">
                 <h3 class="card-title">ジョブ作成フォーム</h3>
               </div>
-              <form role="form">
+              {form method="post"}
                 <div class="card-body">
                   <div class="form-group">
                     <label for="jobtitle">ジョブ名</label>
                     <input
                       type="text"
                       class="form-control"
+                      name="name"
                       placeholder="ジョブ名を入力してください。"
                     />
                   </div>
@@ -275,6 +276,7 @@
                     <textarea
                       rows="3"
                       class="form-control"
+                      name="overview"
                       placeholder="作業内容を入力してください。"
                     ></textarea>
                   </div>
@@ -288,6 +290,7 @@
                       <input
                         type="text"
                         class="form-control datetimepicker-input"
+                        name="dead_line"
                         data-target="#reservationdate"
                       />
                       <div
@@ -305,7 +308,7 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">送信</button>
                 </div>
-              </form>
+              {/form}
             </div>
           </div>
           <!-- /.col-md-6 -->
