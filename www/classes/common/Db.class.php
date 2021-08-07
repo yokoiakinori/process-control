@@ -65,7 +65,7 @@ class Db
             throw new \Exception('Not in Transaction');
         }
         $stmt = self::getInstance()->prepare($sql);
-        $stmt->execute($arr);
+        var_dump($stmt->execute($arr));
         return self::getInstance()->lastInsertId();
     }
 

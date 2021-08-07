@@ -36,18 +36,21 @@ class UserDao
     public static function getDaoFromEmail($strEmail,$intDeleteFlag = null)
     {
         $sql = "SELECT ";
-        $sql .= "`id`";
-        $sql .= ", `name`";
-        $sql .= ", `email`";
-        $sql .= ", `password`";
-        $sql .= ", `token`";
-        $sql .= ", `login_failure_count`";
-        $sql .= ", `login_failure_datetime`";
-        $sql .= ", `delete_flag`";
-        $sql .= ", `position_id`";
-        $sql .= ", `team_id` ";
+        $sql .= "user.id";
+        $sql .= ", user.name";
+        $sql .= ", user.email";
+        $sql .= ", user.password";
+        $sql .= ", user.token";
+        $sql .= ", user.login_failure_count";
+        $sql .= ", user.login_failure_datetime";
+        $sql .= ", user.delete_flag";
+        $sql .= ", user.position_id";
+        $sql .= ", user.team_id ";
+        $sql .= ", position.name AS 'position_name'";
         $sql .= "FROM `user` ";
-        $sql .= "WHERE `email` = :email ";
+        $sql .= "INNER JOIN `position` ";
+        $sql .= "ON user.position_id = position.id ";
+        $sql .= "WHERE user.email = :email ";
 
         $arr = array();
         $arr[':email'] = $strEmail;

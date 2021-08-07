@@ -11,6 +11,8 @@ try{
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
+    $loginUser = LoginController::getLoginUser();
+    Template::assign("name",$loginUser->getName());
     Template::display();
 }
 ?>

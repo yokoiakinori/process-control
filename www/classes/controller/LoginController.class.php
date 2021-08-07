@@ -11,8 +11,9 @@ use \ProcessControl\common\Mail;
 
 class LoginController
 {
-    const TARGET_PAGE = '/dashbord.php';
+    const TARGET_PAGE = '/dashboard.php';
     const LOGINUSER = 'loginUserModel';
+    const AUTHORITY = '管理者';
 
     static public function login()
     {
@@ -39,7 +40,6 @@ class LoginController
             Db::commit();
             throw new InvalidErrorException(ExceptionCode::INVALID_LOCK);
         }
-        
         //パスワードチェック
         if(!$objUserModel->checkPassword($password)){
             $objUserModel->loginFailureIncrement();
@@ -53,23 +53,40 @@ class LoginController
         Db::commit();
 
         session_regenerate_id(true);
-        $_SESSION[self::LOGINUSER] = $objUserModel;
+        $_SESSION[self::LOGINUSER] = serialize($objUserModel);
 
         header(sprintf("location: %s", self::TARGET_PAGE));
     }
 
     static public function  checkLogin()
     {
-        $objUserModel = (isset($_SESSION[self::LOGINUSER]))? $_SESSION[self::LOGINUSER] : null;
-        if(is_object($objUserModel)&&0<$objUserModel->getUserId()){
-            return;
+        if (!empty($_SESSION[self::LOGINUSER])) {
+            $unserialize = unserialize($_SESSION[self::LOGINUSER]);
+            $objUserModel = (isset($unserialize))? $unserialize : null;
+            if(is_object($objUserModel)&&0<$objUserModel->getId()){
+                return;
+            }
         }
         header('Location: /');
     }
 
+    static public function  authorityCheck()
+    {
+        if (!empty($_SESSION[self::LOGINUSER])) {
+            $unserialize = unserialize($_SESSION[self::LOGINUSER]);
+            $objUserModel = (isset($unserialize))? $unserialize : null;
+            if ($objUserModel->getPosition_name()==self::AUTHORITY) {
+                return;
+            }
+            header('Location: /dashboard.php');
+        }else {
+            header('Location: /');
+        }
+    }
+
     static public function  getLoginUser()
     {
-        return $_SESSION[self::LOGINUSER];
+        return unserialize($_SESSION[self::LOGINUSER]);
     }
 
     static public function  logout()
