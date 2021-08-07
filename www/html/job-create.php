@@ -9,6 +9,7 @@ define('LAYOUT','main');
 try{
     require_once '../common.php';
     LoginController::checkLogin();
+    LoginController::authorityCheck();
     JobController::jobCreate();
 
 }catch(\Exception $e){
@@ -19,8 +20,8 @@ try{
     Template::display();
 }
 
-function createJob()
+function logout()
 {
-    JobController::jobCreate();
+    LoginController::logout();
 }
 ?>

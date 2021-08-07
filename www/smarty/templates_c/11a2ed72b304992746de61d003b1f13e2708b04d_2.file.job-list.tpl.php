@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-27 23:47:36
+/* Smarty version 3.1.39, created on 2021-08-07 07:51:44
   from '/var/www/smarty/templates/job-list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61001c882f2202_44014641',
+  'unifunc' => 'content_610dbd00101078_33107051',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11a2ed72b304992746de61d003b1f13e2708b04d' => 
     array (
       0 => '/var/www/smarty/templates/job-list.tpl',
-      1 => 1627397253,
+      1 => 1628290300,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61001c882f2202_44014641 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610dbd00101078_33107051 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37891774861001c882e3da3_78581639', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1944017149610dbd000f9d87_62391679', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_83362177561001c882eebd0_85927789', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_667897502610dbd000ff964_19981139', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_30137668361001c882f16a3_38172611', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1828392882610dbd001007f4_51232480', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_37891774861001c882e3da3_78581639 extends Smarty_Internal_Block
+class Block_1944017149610dbd000f9d87_62391679 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_37891774861001c882e3da3_78581639',
+    0 => 'Block_1944017149610dbd000f9d87_62391679',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_83362177561001c882eebd0_85927789 extends Smarty_Internal_Block
+class Block_667897502610dbd000ff964_19981139 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_83362177561001c882eebd0_85927789',
+    0 => 'Block_667897502610dbd000ff964_19981139',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -77,6 +77,11 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="job-list.php" class="nav-link">ジョブ一覧</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <form method="get" action="">
+          <input type="submit" name="btn_logout" value="ログアウト" />
+        </form>
       </li>
     </ul>
 
@@ -373,7 +378,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
               </div>
             </div>
 
-            <a href="job-create.php" class="btn btn-primary">新規ジョブを作成</a>
+            <a href="job-create.php" class="btn btn-primary"
+              >新規ジョブを作成</a
+            >
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -412,12 +419,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_30137668361001c882f16a3_38172611 extends Smarty_Internal_Block
+class Block_1828392882610dbd001007f4_51232480 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_30137668361001c882f16a3_38172611',
+    0 => 'Block_1828392882610dbd001007f4_51232480',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

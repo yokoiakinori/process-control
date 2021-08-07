@@ -17,6 +17,11 @@
       <li class="nav-item d-none d-sm-inline-block">
         <a href="job-list.php" class="nav-link">ジョブ一覧</a>
       </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <form method="get" action="">
+          <input type="submit" name="btn_logout" value="ログアウト" />
+        </form>
+      </li>
     </ul>
 
     <!-- Right navbar links -->
@@ -312,7 +317,9 @@
               </div>
             </div>
 
-            <a href="job-create.php" class="btn btn-primary">新規ジョブを作成</a>
+            <a href="job-create.php" class="btn btn-primary"
+              >新規ジョブを作成</a
+            >
           </div>
           <!-- /.col-md-6 -->
         </div>

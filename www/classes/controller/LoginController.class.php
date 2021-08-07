@@ -13,6 +13,7 @@ class LoginController
 {
     const TARGET_PAGE = '/dashboard.php';
     const LOGINUSER = 'loginUserModel';
+    const AUTHORITY = '管理者';
 
     static public function login()
     {
@@ -59,12 +60,28 @@ class LoginController
 
     static public function  checkLogin()
     {
-        $unserialize = unserialize($_SESSION[self::LOGINUSER]);
-        $objUserModel = (isset($unserialize))? $unserialize : null;
-        if(is_object($objUserModel)&&0<$objUserModel->getId()){
-            return;
+        if (!empty($_SESSION[self::LOGINUSER])) {
+            $unserialize = unserialize($_SESSION[self::LOGINUSER]);
+            $objUserModel = (isset($unserialize))? $unserialize : null;
+            if(is_object($objUserModel)&&0<$objUserModel->getId()){
+                return;
+            }
         }
         header('Location: /');
+    }
+
+    static public function  authorityCheck()
+    {
+        if (!empty($_SESSION[self::LOGINUSER])) {
+            $unserialize = unserialize($_SESSION[self::LOGINUSER]);
+            $objUserModel = (isset($unserialize))? $unserialize : null;
+            if ($objUserModel->getPosition_name()==self::AUTHORITY) {
+                return;
+            }
+            header('Location: /dashboard.php');
+        }else {
+            header('Location: /');
+        }
     }
 
     static public function  getLoginUser()

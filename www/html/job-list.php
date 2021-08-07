@@ -8,6 +8,9 @@ define('LAYOUT','main');
 try{
     require_once '../common.php';
     LoginController::checkLogin();
+    if( !empty($_GET['btn_logout']) ) {
+        LoginController::logout();
+    }
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
@@ -15,4 +18,5 @@ try{
     Template::assign("name",$loginUser->getName());
     Template::display();
 }
+
 ?>
