@@ -1,7 +1,7 @@
 <?php
 
 namespace ProcessControl\controller;
-use \ProcessControl\model\UserModel;
+use \ProcessControl\model\JobModel;
 use \ProcessControl\common\Db;
 use \ProcessControl\dao\JobDao;
 use \ProcessControl\common\InvalidErrorException;
@@ -30,5 +30,11 @@ class JobController
         Db::transaction();
         JobDao::insert($insertObj);
         Db::commit();
+    }
+
+    static public function jobList()
+    {
+        $objModel = new JobModel();
+        return $objModel->getModel();
     }
 }

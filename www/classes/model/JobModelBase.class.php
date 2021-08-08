@@ -8,28 +8,21 @@ class JobModelBase
 {
     private $_id=null;
     private $_name=null;
-    private $_email=null;
-    private $_password=null;
-    private $_token=null;
-    private $_login_failure_count=null;
-    private $_login_failure_datetime=null;
-    private $_delete_flag=null;
-    private $_position_id=null;
-    private $_team_id=null;
-
+    private $_overview=null;
+    private $_dead_line=null;
+    private $_rep_id=null;
+    private $_is_finished=null;
+    private $_createdat=null;
 
     protected function setProperty(array $arrDao)
     {
         $this->setId($arrDao['id'])
         ->setName($arrDao['name'])
-        ->setEmail($arrDao['email'])
-        ->setPassword($arrDao['password'])
-        ->setToken($arrDao['token'])
-        ->setLogin_failure_count($arrDao['login_failure_count'])
-        ->setLogin_failure_datetime($arrDao['login_failure_datetime'])
-        ->setDelete_flag($arrDao['delete_flag'])
-        ->setPosition_id($arrDao['position_id'])
-        ->setTeam_id($arrDao['team_id']);
+        ->setOverview($arrDao['overview'])
+        ->setDead_line($arrDao['dead_line'])
+        ->setRep_id($arrDao['rep_id'])
+        ->setIs_finished($arrDao['is_finished'])
+        ->setCreatedat($arrDao['createdat']);
         return $this;
     }
 
@@ -49,44 +42,29 @@ class JobModelBase
         $this->_name = $name;
         return $this;
     }
-    public function setEmail($email)
+    public function setOverview($overview)
     {
-        $this->_email = $email;
+        $this->_overview = $overview;
         return $this;
     }
-    public function setPassword($password)
+    public function setDead_line($dead_line)
     {
-        $this->_password = $password;
+        $this->_dead_line = $dead_line;
         return $this;
     }
-    public function setToken($token)
+    public function setRep_id($rep_id)
     {
-        $this->_token = $token;
+        $this->_rep_id = $rep_id;
         return $this;
     }
-    public function setLogin_failure_count($login_failure_count)
+    public function setIs_finished($is_finished)
     {
-        $this->_login_failure_count = $login_failure_count;
+        $this->_is_finished = $is_finished;
         return $this;
     }
-    public function setLogin_failure_datetime($login_failure_datetime)
+    public function setCreatedat($createdat)
     {
-        $this->_login_failure_datetime = $login_failure_datetime;
-        return $this;
-    }
-    public function setDelete_flag($delete_flag)
-    {
-        $this->_delete_flag = $delete_flag;
-        return $this;
-    }
-    public function setPosition_id($position_id)
-    {
-        $this->_position_id = $position_id;
-        return $this;
-    }
-    public function setTeam_id($team_id)
-    {
-        $this->_team_id = $team_id;
+        $this->_createdat = $createdat;
         return $this;
     }
 
@@ -99,37 +77,25 @@ class JobModelBase
     {
         return $this->_name;
     }
-    public function getEmail()
+    public function getOverview()
     {
-        return $this->_email;
+        return $this->_overview;
     }
-    public function getPassword()
+    public function getDead_line()
     {
-        return $this->_password;
+        return $this->_dead_line;
     }
-    public function getToken()
+    public function getRep_id()
     {
-        return $this->_token;
+        return $this->_rep_id;
     }
-    public function getLogin_failure_count()
+    public function getIs_finished()
     {
-        return $this->_login_failure_count;
+        return $this->_is_finished;
     }
-    public function getLogin_failure_datetime()
+    public function getCreatedat()
     {
-        return $this->_login_failure_datetime;
-    }
-    public function getDelete_flag()
-    {
-        return $this->_delete_flag;
-    }
-    public function getPosition_id()
-    {
-        return $this->_position_id;
-    }
-    public function getTeam_id()
-    {
-        return $this->_team_id;
+        return $this->_createdat;
     }
 
 

@@ -41,4 +41,21 @@ class JobDao
 
         return Db::insert($sql,$arr);
     }
+
+    public static function getDao()
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= ", `overview`";
+        $sql .= ", `dead_line`";
+        $sql .= ", `rep_id`";
+        $sql .= ", `is_finished`";
+        $sql .= ", `createdat`";
+        $sql .= " FROM ";
+        $sql .= " `job` ";
+
+
+        return Db::all($sql);
+    }
 }
