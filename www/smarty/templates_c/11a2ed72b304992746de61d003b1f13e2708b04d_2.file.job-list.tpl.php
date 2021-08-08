@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-07 07:51:44
+/* Smarty version 3.1.39, created on 2021-08-08 11:41:53
   from '/var/www/smarty/templates/job-list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610dbd00101078_33107051',
+  'unifunc' => 'content_610f4471deab24_09101306',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11a2ed72b304992746de61d003b1f13e2708b04d' => 
     array (
       0 => '/var/www/smarty/templates/job-list.tpl',
-      1 => 1628290300,
+      1 => 1628390510,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610dbd00101078_33107051 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610f4471deab24_09101306 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1944017149610dbd000f9d87_62391679', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1321510503610f4471d9ddc1_54623503', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_667897502610dbd000ff964_19981139', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2117628491610f4471dae7b5_72413449', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1828392882610dbd001007f4_51232480', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_89383361610f4471de6d24_32667328', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1944017149610dbd000f9d87_62391679 extends Smarty_Internal_Block
+class Block_1321510503610f4471d9ddc1_54623503 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1944017149610dbd000f9d87_62391679',
+    0 => 'Block_1321510503610f4471d9ddc1_54623503',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_667897502610dbd000ff964_19981139 extends Smarty_Internal_Block
+class Block_2117628491610f4471dae7b5_72413449 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_667897502610dbd000ff964_19981139',
+    0 => 'Block_2117628491610f4471dae7b5_72413449',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -317,66 +317,34 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['jobList']->value, 'jobItem');
+$_smarty_tpl->tpl_vars['jobItem']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['jobItem']->value) {
+$_smarty_tpl->tpl_vars['jobItem']->do_else = false;
+?>
           <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-
             <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['name'], ENT_QUOTES, 'UTF-8');?>
+</h5>
+              </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['overview'], ENT_QUOTES, 'UTF-8');?>
+</h6>
 
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
+
                 </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="#" class="btn btn-primary">編集する</a>
+                <a href="#" class="btn btn-primary">削除する</a>
               </div>
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+          <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 
             <a href="job-create.php" class="btn btn-primary"
               >新規ジョブを作成</a
@@ -419,12 +387,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1828392882610dbd001007f4_51232480 extends Smarty_Internal_Block
+class Block_89383361610f4471de6d24_32667328 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1828392882610dbd001007f4_51232480',
+    0 => 'Block_89383361610f4471de6d24_32667328',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

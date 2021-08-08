@@ -256,66 +256,24 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+          {foreach from=$jobList item=jobItem}
           <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-
             <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h5 class="m-0">{$jobItem['name']}</h5>
+              </div>
               <div class="card-body">
-                <h5 class="card-title">Card title</h5>
+                <h6 class="card-title">{$jobItem['overview']}</h6>
 
                 <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
+                  納期:{$jobItem['dead_line']}
                 </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
+                <a href="#" class="btn btn-primary">編集する</a>
+                <a href="#" class="btn btn-primary">削除する</a>
               </div>
             </div>
-            <!-- /.card -->
           </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
+          {/foreach}
 
             <a href="job-create.php" class="btn btn-primary"
               >新規ジョブを作成</a

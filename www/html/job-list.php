@@ -10,7 +10,7 @@ try{
     require_once '../common.php';
     LoginController::checkLogin();
     $jobList = JobController::jobList();
-    var_dump($jobList);
+    Template::assign("jobList",$jobList);
     if( !empty($_GET['btn_logout']) ) {
         LoginController::logout();
     }
