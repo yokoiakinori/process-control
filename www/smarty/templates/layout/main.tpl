@@ -47,6 +47,15 @@
     <!-- Tempusdominus Bootstrap 4 -->
     <script src="../../plugins/tempusdominus-bootstrap-4/js/tempusdominus-bootstrap-4.min.js"></script>
     <script>
+      function check() {
+        if (window.confirm("削除してよろしいですか？")) {
+          return true;
+        } else {
+          window.alert("キャンセルされました。");
+          return false;
+        }
+      }
+
       $(function () {
         //Date picker
         $("#reservationdate").datetimepicker({
@@ -56,7 +65,7 @@
         //Date and time picker
         $("#reservationdatetime").datetimepicker({
           icons: { time: "far fa-clock" },
-          format:"YYYY/MM/DD"
+          format: "YYYY/MM/DD",
         });
 
         //Date range picker

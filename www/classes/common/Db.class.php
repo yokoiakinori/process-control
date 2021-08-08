@@ -59,13 +59,20 @@ class Db
         return $stmt->fetchAll();
     }
 
+    public static function all($sql)
+    {
+        $stmt = self::getInstance()->prepare($sql);
+        $stmt->execute();
+        return $stmt->fetchAll();
+    }
+
     public static function insert($sql,array $arr)
     {
         if(!self::getInstance()->inTransaction()){
             throw new \Exception('Not in Transaction');
         }
         $stmt = self::getInstance()->prepare($sql);
-        var_dump($stmt->execute($arr));
+        $stmt->execute($arr);
         return self::getInstance()->lastInsertId();
     }
 
