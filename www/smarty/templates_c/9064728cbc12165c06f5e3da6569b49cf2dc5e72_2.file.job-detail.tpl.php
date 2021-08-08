@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-08 13:27:53
-  from '/var/www/smarty/templates/job-list.tpl' */
+/* Smarty version 3.1.39, created on 2021-08-08 16:27:31
+  from '/var/www/smarty/templates/job-detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610f5d497f7ee9_86441312',
+  'unifunc' => 'content_610f87634b0b12_76950165',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
-    '11a2ed72b304992746de61d003b1f13e2708b04d' => 
+    '9064728cbc12165c06f5e3da6569b49cf2dc5e72' => 
     array (
-      0 => '/var/www/smarty/templates/job-list.tpl',
-      1 => 1628396863,
+      0 => '/var/www/smarty/templates/job-detail.tpl',
+      1 => 1628407648,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610f5d497f7ee9_86441312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_610f87634b0b12_76950165 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1135011872610f5d497d5f80_51523995', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_640469706610f876349f316_18806759', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2023907449610f5d497dd338_48139189', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1440318635610f87634a39e2_24200463', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_679255411610f5d497f7650_06892456', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_776213887610f87634afe99_73272552', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1135011872610f5d497d5f80_51523995 extends Smarty_Internal_Block
+class Block_640469706610f876349f316_18806759 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1135011872610f5d497d5f80_51523995',
+    0 => 'Block_640469706610f876349f316_18806759',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_2023907449610f5d497dd338_48139189 extends Smarty_Internal_Block
+class Block_1440318635610f87634a39e2_24200463 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2023907449610f5d497dd338_48139189',
+    0 => 'Block_1440318635610f87634a39e2_24200463',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -296,13 +296,13 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ジョブ一覧</h1>
+            <h1 class="m-0 text-dark">ジョブ詳細</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">ジョブ一覧</li>
+              <li class="breadcrumb-item active">ジョブ詳細</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -317,15 +317,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <?php
-$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['jobList']->value, 'jobItem');
-$_smarty_tpl->tpl_vars['jobItem']->index = -1;
-$_smarty_tpl->tpl_vars['jobItem']->do_else = true;
-if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['jobItem']->value) {
-$_smarty_tpl->tpl_vars['jobItem']->do_else = false;
-$_smarty_tpl->tpl_vars['jobItem']->index++;
-$__foreach_jobItem_0_saved = $_smarty_tpl->tpl_vars['jobItem'];
-?>
           <div class="col-lg-6">
             <div class="card card-primary card-outline">
               <div class="card-header">
@@ -346,19 +337,9 @@ $__foreach_jobItem_0_saved = $_smarty_tpl->tpl_vars['jobItem'];
                   納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
 
                 </p>
-                <a href="/job-detail.php?job=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->index, ENT_QUOTES, 'UTF-8');?>
-" class="btn btn-primary">詳細確認</a>
               </div>
             </div>
           </div>
-          <?php
-$_smarty_tpl->tpl_vars['jobItem'] = $__foreach_jobItem_0_saved;
-}
-$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-
-            <a href="job-create.php" class="btn btn-primary"
-              >新規ジョブを作成</a
-            >
           </div>
           <!-- /.col-md-6 -->
         </div>
@@ -397,12 +378,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_679255411610f5d497f7650_06892456 extends Smarty_Internal_Block
+class Block_776213887610f87634afe99_73272552 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_679255411610f5d497f7650_06892456',
+    0 => 'Block_776213887610f87634afe99_73272552',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
