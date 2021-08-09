@@ -10,9 +10,14 @@ try{
     require_once '../common.php';
     LoginController::checkLogin();
     LoginController::authorityCheck();
+
     $jobList = JobController::jobList();
     $jobItem = $jobList[$_GET['job']];
     Template::assign("jobItem",$jobItem);
+
+    $userList = LoginController::getAllUser();
+    Template::assign("userList",$userList);
+
     if( !empty($_GET['btn_logout']) ) {
         LoginController::logout();
     }

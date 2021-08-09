@@ -8,6 +8,7 @@ use \ProcessControl\common\ExceptionCode;
 use \ProcessControl\common\Csrf;
 use \ProcessControl\common\Log;
 use \ProcessControl\common\Mail;
+use ProcessControl\dao\UserDao;
 
 class LoginController
 {
@@ -87,6 +88,11 @@ class LoginController
     static public function  getLoginUser()
     {
         return unserialize($_SESSION[self::LOGINUSER]);
+    }
+
+    static public function  getAllUser()
+    {
+        return UserDao::allUser();
     }
 
     static public function  logout()
