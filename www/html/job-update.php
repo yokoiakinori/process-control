@@ -18,6 +18,8 @@ try{
     $userList = LoginController::getAllUser();
     Template::assign("userList",$userList);
 
+    JobController::jobUpdate(intval($_GET["jobid"]));
+
     if( !empty($_GET['btn_logout']) ) {
         LoginController::logout();
     }

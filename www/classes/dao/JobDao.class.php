@@ -59,15 +59,15 @@ class JobDao
         return Db::all($sql);
     }
 
-    public static function save($objJobModel)
+    public static function update($objJobModel)
     {
         $sql = "UPDATE ";
-        $sql .= "`user` ";
+        $sql .= "`job` ";
         $sql .= "SET ";
-        $sql .= ", `name` = :name ";
+        $sql .= "`name` = :name ";
         $sql .= ", `overview` = :overview ";
         $sql .= ", `dead_line` = :dead_line ";
-        $sql .= ", `rep_id` = :rep_id";
+        $sql .= ", `rep_id` = :rep_id ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();
