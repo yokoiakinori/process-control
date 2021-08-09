@@ -14,6 +14,10 @@ try{
     if( !empty($_GET['btn_logout']) ) {
         LoginController::logout();
     }
+    if( !empty($_GET['btn_jobRemove']) ) {
+        JobController::jobdelete(intval($_GET['btn_jobRemove']));
+        header('Location: /');
+    }
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
