@@ -273,6 +273,7 @@
                 <p class="card-text">
                   納期:{$jobItem['dead_line']}
                 </p>
+                <a href="/job-update.php?job={$smarty.get.job}&jobid={$jobItem["id"]}" class="btn btn-primary">ジョブを編集する</a>
               </div>
             </div>
           </div>

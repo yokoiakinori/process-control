@@ -1,67 +1,6 @@
-<?php
-/* Smarty version 3.1.39, created on 2021-08-09 17:32:30
-  from '/var/www/smarty/templates/job-detail.tpl' */
-
-/* @var Smarty_Internal_Template $_smarty_tpl */
-if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
-  'version' => '3.1.39',
-  'unifunc' => 'content_6110e81e27f6d5_79578966',
-  'has_nocache_code' => false,
-  'file_dependency' => 
-  array (
-    '9064728cbc12165c06f5e3da6569b49cf2dc5e72' => 
-    array (
-      0 => '/var/www/smarty/templates/job-detail.tpl',
-      1 => 1628497943,
-      2 => 'file',
-    ),
-  ),
-  'includes' => 
-  array (
-  ),
-),false)) {
-function content_6110e81e27f6d5_79578966 (Smarty_Internal_Template $_smarty_tpl) {
-$_smarty_tpl->_loadInheritance();
-$_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12489969396110e81e25e091_87186693', 'meta');
-?>
- <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4699380886110e81e2653e2_66932083', 'content');
-?>
- <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2542465756110e81e27ec47_82169915', 'script');
-?>
-
-<?php }
-/* {block 'meta'} */
-class Block_12489969396110e81e25e091_87186693 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'meta' => 
-  array (
-    0 => 'Block_12489969396110e81e25e091_87186693',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
-<title>マイページ</title>
-<?php
-}
-}
-/* {/block 'meta'} */
-/* {block 'content'} */
-class Block_4699380886110e81e2653e2_66932083 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'content' => 
-  array (
-    0 => 'Block_4699380886110e81e2653e2_66932083',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
-
+{block name='meta'}
+<title>新規ジョブ作成</title>
+{/block} {block name='content'}
 <div class="wrapper">
   <!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
@@ -77,11 +16,6 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="job-list.php" class="nav-link">ジョブ一覧</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <form method="get" action="">
-          <input type="submit" name="btn_logout" value="ログアウト" />
-        </form>
       </li>
     </ul>
 
@@ -296,13 +230,16 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ジョブ詳細</h1>
+            <h1 class="m-0 text-dark">ジョブ編集</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">ジョブ詳細</li>
+              <li class="breadcrumb-item"><a href="dashboard.php">Home</a></li>
+              <li class="breadcrumb-item">
+                <a href="job-list.php">ジョブ一覧</a>
+              </li>
+              <li class="breadcrumb-item active">ジョブ編集</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -318,32 +255,67 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="container-fluid">
         <div class="row">
           <div class="col-lg-6">
-            <div class="card card-primary card-outline">
+            <!-- /.card -->
+            <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['name'], ENT_QUOTES, 'UTF-8');?>
-</h3>
-                <div class="card-tools">
-                  <form method="GET" action="" onSubmit="return check()">
-                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove"><i class="fas fa-times"></i>
-                    </button>
-                  </form>
+                <h3 class="card-title">ジョブ編集フォーム</h3>
+              </div>
+              {form method="post"}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="jobtitle">ジョブ名</label>
+                    <input
+                      type="text"
+                      class="form-control"
+                      name="name"
+                      value="{$jobItem["name"]}"
+                      placeholder="ジョブ名を入力してください。"
+                    />
+                  </div>
+                  <div class="form-group">
+                    <label for="joboverview">概要</label>
+                    <textarea
+                      rows="3"
+                      class="form-control"
+                      name="overview"
+                      placeholder="作業内容を入力してください。"
+                    >{$jobItem["overview"]}
+                    </textarea>
+                  </div>
+                  <div class="form-group">
+                    <label for="jobdeadline">納期</label>
+                    <div
+                      class="input-group date"
+                      id="reservationdate"
+                      data-target-input="nearest"
+                    >
+                      <input
+                        type="text"
+                        class="form-control datetimepicker-input"
+                        name="dead_line"
+                        value="{$jobItem["dead_line"]}"
+                        data-target="#reservationdate"
+                      />
+                      <div
+                        class="input-group-append"
+                        data-target="#reservationdate"
+                        data-toggle="datetimepicker"
+                      >
+                        <div class="input-group-text">
+                          <i class="fa fa-calendar"></i>
+                        </div>
+                      </div>
+                    </div>
+                  </div>
                 </div>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['overview'], ENT_QUOTES, 'UTF-8');?>
-</h6>
-
-                <p class="card-text">
-                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
-
-                </p>
-                <a href="/job-update.php?job=<?php echo htmlspecialchars($_GET['job'], ENT_QUOTES, 'UTF-8');?>
-&jobid=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["id"], ENT_QUOTES, 'UTF-8');?>
-" class="btn btn-primary">ジョブを編集する</a>
-              </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">送信</button>
+                </div>
+              {/form}
             </div>
           </div>
-          </div>
+          <!-- /.col-md-6 -->
+          <div class="col-lg-6"></div>
           <!-- /.col-md-6 -->
         </div>
         <!-- /.row -->
@@ -376,23 +348,4 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     All rights reserved.
   </footer>
 </div>
-<?php
-}
-}
-/* {/block 'content'} */
-/* {block 'script'} */
-class Block_2542465756110e81e27ec47_82169915 extends Smarty_Internal_Block
-{
-public $subBlocks = array (
-  'script' => 
-  array (
-    0 => 'Block_2542465756110e81e27ec47_82169915',
-  ),
-);
-public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
-?>
- <?php
-}
-}
-/* {/block 'script'} */
-}
+{/block} {block name='script'} {/block}

@@ -58,4 +58,25 @@ class JobDao
 
         return Db::all($sql);
     }
+
+    public static function save($objJobModel)
+    {
+        $sql = "UPDATE ";
+        $sql .= "`user` ";
+        $sql .= "SET ";
+        $sql .= ", `name` = :name ";
+        $sql .= ", `overview` = :overview ";
+        $sql .= ", `dead_line` = :dead_line ";
+        $sql .= ", `rep_id` = :rep_id";
+        $sql .= "WHERE `id` = :id ";
+
+        $arr = array();
+        $arr[':id'] = $objJobModel["id"];
+        $arr[':name'] = $objJobModel["name"];
+        $arr[':overview'] = $objJobModel["overview"];
+        $arr[':dead_line'] = $objJobModel["dead_line"];
+        $arr[':rep_id'] = $objJobModel["rep_id"];
+
+        return Db::update($sql,$arr);
+    }
 }
