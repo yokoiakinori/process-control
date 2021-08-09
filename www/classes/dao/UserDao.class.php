@@ -84,6 +84,15 @@ class UserDao
         return Db::select($sql,$arr);
     }
 
+    public static function allUser()
+    {
+        $sql = "SELECT ";
+        $sql .= "* ";
+        $sql .= "FROM `user` ";
+
+        return Db::all($sql);
+    }
+
     public static function save(UserModel $objUserModel)
     {
         $sql = "UPDATE ";

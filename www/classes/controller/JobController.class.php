@@ -38,27 +38,29 @@ class JobController
         return $objModel->getModel();
     }
 
-    static public function jobUpdate()
+    static public function jobUpdate($jobid)
     {
         if(!filter_input_array(INPUT_POST)){
             return;
         }
 
         Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
+        $repId=intval(filter_input(INPUT_POST,'rep_id'));
 
-        $insertObj = [
-            "id" => (int)$_GET["jobid"],
+
+        $updateObj = [
+            "id" => $jobid,
             "name" => filter_input(INPUT_POST,'name'),
             "overview" => filter_input(INPUT_POST,'overview'),
             "dead_line" => filter_input(INPUT_POST,'dead_line'),
-            "rep_id" => filter_input(INPUT_POST,'rep_id'),
+            "rep_id" => $repId,
         ];
-        if($insertObj["name"] == ''||$insertObj["overview"] == ''||$insertObj["dead_line"] == ''||$insertObj["rep_id"]==''){
+        if($updateObj["name"] == ''||$updateObj["overview"] == ''||$updateObj["dead_line"] == ''||$updateObj["rep_id"]==''){
             return;
         }
 
         Db::transaction();
-        JobDao::insert($insertObj);
+        JobDao::update($updateObj);
         Db::commit();
     }
 }

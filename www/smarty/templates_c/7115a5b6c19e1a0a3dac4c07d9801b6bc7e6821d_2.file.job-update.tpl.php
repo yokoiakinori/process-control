@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-09 17:42:21
+/* Smarty version 3.1.39, created on 2021-08-09 18:23:45
   from '/var/www/smarty/templates/job-update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6110ea6d16bc38_85327403',
+  'unifunc' => 'content_6110f421b00b15_79186416',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7115a5b6c19e1a0a3dac4c07d9801b6bc7e6821d' => 
     array (
       0 => '/var/www/smarty/templates/job-update.tpl',
-      1 => 1628498537,
+      1 => 1628501022,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6110ea6d16bc38_85327403 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6110f421b00b15_79186416 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3802846956110ea6d12cac5_56323072', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20424186756110f421abb833_94018709', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15967581686110ea6d1321b3_02613599', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3223861546110f421ac19d9_16838211', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4122813076110ea6d16a7d8_85327079', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7953987386110f421b00235_63266551', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_3802846956110ea6d12cac5_56323072 extends Smarty_Internal_Block
+class Block_20424186756110f421abb833_94018709 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_3802846956110ea6d12cac5_56323072',
+    0 => 'Block_20424186756110f421abb833_94018709',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_15967581686110ea6d1321b3_02613599 extends Smarty_Internal_Block
+class Block_3223861546110f421ac19d9_16838211 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_15967581686110ea6d1321b3_02613599',
+    0 => 'Block_3223861546110f421ac19d9_16838211',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -327,59 +327,70 @@ $_block_repeat=true;
 echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
 while ($_block_repeat) {
 ob_start();?>
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="jobtitle">ジョブ名</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["name"], ENT_QUOTES, 'UTF-8');?>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="jobtitle">ジョブ名</label>
+                  <input type="text" class="form-control" name="name"
+                  value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["name"], ENT_QUOTES, 'UTF-8');?>
 "
-                      placeholder="ジョブ名を入力してください。"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="joboverview">概要</label>
-                    <textarea
-                      rows="3"
-                      class="form-control"
-                      name="overview"
-                      placeholder="作業内容を入力してください。"
-                    ><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["overview"], ENT_QUOTES, 'UTF-8');?>
+                  placeholder="ジョブ名を入力してください。" />
+                </div>
+                <div class="form-group">
+                  <label for="joboverview">概要</label>
+                  <textarea
+                    rows="3"
+                    class="form-control"
+                    name="overview"
+                    placeholder="作業内容を入力してください。"
+                  >
+<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["overview"], ENT_QUOTES, 'UTF-8');?>
 
-                    </textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="jobdeadline">納期</label>
-                    <div
-                      class="input-group date"
-                      id="reservationdate"
-                      data-target-input="nearest"
-                    >
-                      <input
-                        type="text"
-                        class="form-control datetimepicker-input"
-                        name="dead_line"
-                        value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["dead_line"], ENT_QUOTES, 'UTF-8');?>
+                    </textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="jobdeadline">納期</label>
+                  <div
+                    class="input-group date"
+                    id="reservationdate"
+                    data-target-input="nearest"
+                  >
+                    <input type="text" class="form-control datetimepicker-input"
+                    name="dead_line" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value["dead_line"], ENT_QUOTES, 'UTF-8');?>
 "
-                        data-target="#reservationdate"
-                      />
-                      <div
-                        class="input-group-append"
-                        data-target="#reservationdate"
-                        data-toggle="datetimepicker"
-                      >
-                        <div class="input-group-text">
-                          <i class="fa fa-calendar"></i>
-                        </div>
+                    data-target="#reservationdate" />
+                    <div
+                      class="input-group-append"
+                      data-target="#reservationdate"
+                      data-toggle="datetimepicker"
+                    >
+                      <div class="input-group-text">
+                        <i class="fa fa-calendar"></i>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">送信</button>
+                <div class="form-group">
+                  <label for="jobrep">担当者</label>
+                  <select name="rep_id" class="form-control">
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['userList']->value, 'user');
+$_smarty_tpl->tpl_vars['user']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['user']->value) {
+$_smarty_tpl->tpl_vars['user']->do_else = false;
+?>
+                    <option value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['user']->value["id"], ENT_QUOTES, 'UTF-8');?>
+"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['user']->value["name"], ENT_QUOTES, 'UTF-8');?>
+</option>
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                  </select>
                 </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">送信</button>
+              </div>
               <?php $_block_repeat=false;
 echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
 }
@@ -425,12 +436,12 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_4122813076110ea6d16a7d8_85327079 extends Smarty_Internal_Block
+class Block_7953987386110f421b00235_63266551 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_4122813076110ea6d16a7d8_85327079',
+    0 => 'Block_7953987386110f421b00235_63266551',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

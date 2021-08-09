@@ -261,56 +261,58 @@
                 <h3 class="card-title">ジョブ編集フォーム</h3>
               </div>
               {form method="post"}
-                <div class="card-body">
-                  <div class="form-group">
-                    <label for="jobtitle">ジョブ名</label>
-                    <input
-                      type="text"
-                      class="form-control"
-                      name="name"
-                      value="{$jobItem["name"]}"
-                      placeholder="ジョブ名を入力してください。"
-                    />
-                  </div>
-                  <div class="form-group">
-                    <label for="joboverview">概要</label>
-                    <textarea
-                      rows="3"
-                      class="form-control"
-                      name="overview"
-                      placeholder="作業内容を入力してください。"
-                    >{$jobItem["overview"]}
-                    </textarea>
-                  </div>
-                  <div class="form-group">
-                    <label for="jobdeadline">納期</label>
+              <div class="card-body">
+                <div class="form-group">
+                  <label for="jobtitle">ジョブ名</label>
+                  <input type="text" class="form-control" name="name"
+                  value="{$jobItem["name"]}"
+                  placeholder="ジョブ名を入力してください。" />
+                </div>
+                <div class="form-group">
+                  <label for="joboverview">概要</label>
+                  <textarea
+                    rows="3"
+                    class="form-control"
+                    name="overview"
+                    placeholder="作業内容を入力してください。"
+                  >
+{$jobItem["overview"]}
+                    </textarea
+                  >
+                </div>
+                <div class="form-group">
+                  <label for="jobdeadline">納期</label>
+                  <div
+                    class="input-group date"
+                    id="reservationdate"
+                    data-target-input="nearest"
+                  >
+                    <input type="text" class="form-control datetimepicker-input"
+                    name="dead_line" value="{$jobItem["dead_line"]}"
+                    data-target="#reservationdate" />
                     <div
-                      class="input-group date"
-                      id="reservationdate"
-                      data-target-input="nearest"
+                      class="input-group-append"
+                      data-target="#reservationdate"
+                      data-toggle="datetimepicker"
                     >
-                      <input
-                        type="text"
-                        class="form-control datetimepicker-input"
-                        name="dead_line"
-                        value="{$jobItem["dead_line"]}"
-                        data-target="#reservationdate"
-                      />
-                      <div
-                        class="input-group-append"
-                        data-target="#reservationdate"
-                        data-toggle="datetimepicker"
-                      >
-                        <div class="input-group-text">
-                          <i class="fa fa-calendar"></i>
-                        </div>
+                      <div class="input-group-text">
+                        <i class="fa fa-calendar"></i>
                       </div>
                     </div>
                   </div>
                 </div>
-                <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">送信</button>
+                <div class="form-group">
+                  <label for="jobrep">担当者</label>
+                  <select name="rep_id" class="form-control">
+                  {foreach $userList as $user}
+                    <option value="{$user["id"]}">{$user["name"]}</option>
+                  {/foreach}
+                  </select>
                 </div>
+              </div>
+              <div class="card-footer">
+                <button type="submit" class="btn btn-primary">送信</button>
+              </div>
               {/form}
             </div>
           </div>
