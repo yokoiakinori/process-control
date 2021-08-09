@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-08 13:27:53
+/* Smarty version 3.1.39, created on 2021-08-09 22:51:07
   from '/var/www/smarty/templates/job-list.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610f5d497f7ee9_86441312',
+  'unifunc' => 'content_611132cb4f6785_78223974',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '11a2ed72b304992746de61d003b1f13e2708b04d' => 
     array (
       0 => '/var/www/smarty/templates/job-list.tpl',
-      1 => 1628396863,
+      1 => 1628516985,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_610f5d497f7ee9_86441312 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611132cb4f6785_78223974 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1135011872610f5d497d5f80_51523995', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1619093958611132cb4966e1_60515321', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2023907449610f5d497dd338_48139189', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1651831886611132cb49e354_87020099', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_679255411610f5d497f7650_06892456', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1761435287611132cb4f5e89_30196268', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1135011872610f5d497d5f80_51523995 extends Smarty_Internal_Block
+class Block_1619093958611132cb4966e1_60515321 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1135011872610f5d497d5f80_51523995',
+    0 => 'Block_1619093958611132cb4966e1_60515321',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_2023907449610f5d497dd338_48139189 extends Smarty_Internal_Block
+class Block_1651831886611132cb49e354_87020099 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_2023907449610f5d497dd338_48139189',
+    0 => 'Block_1651831886611132cb49e354_87020099',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -333,7 +333,8 @@ $__foreach_jobItem_0_saved = $_smarty_tpl->tpl_vars['jobItem'];
 </h3>
                 <div class="card-tools">
                   <form method="GET" action="" onSubmit="return check()">
-                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove"><i class="fas fa-times"></i>
+                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['id'], ENT_QUOTES, 'UTF-8');?>
+"><i class="fas fa-times"></i>
                     </button>
                   </form>
                 </div>
@@ -397,12 +398,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_679255411610f5d497f7650_06892456 extends Smarty_Internal_Block
+class Block_1761435287611132cb4f5e89_30196268 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_679255411610f5d497f7650_06892456',
+    0 => 'Block_1761435287611132cb4f5e89_30196268',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

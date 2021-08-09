@@ -263,7 +263,7 @@
                 <h3 class="card-title">{$jobItem['name']}</h3>
                 <div class="card-tools">
                   <form method="GET" action="" onSubmit="return check()">
-                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove"><i class="fas fa-times"></i>
+                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove" value="{$jobItem['id']}"><i class="fas fa-times"></i>
                     </button>
                   </form>
                 </div>

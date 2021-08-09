@@ -79,4 +79,17 @@ class JobDao
 
         return Db::update($sql,$arr);
     }
+
+    public static function delete($id)
+    {
+        $sql = "DELETE ";
+        $sql .= "FROM ";
+        $sql .= "`job` ";
+        $sql .= "WHERE `id` = :id ";
+
+        $arr = array();
+        $arr[':id'] = $id;
+
+        return Db::delete($sql,$arr);
+    }
 }

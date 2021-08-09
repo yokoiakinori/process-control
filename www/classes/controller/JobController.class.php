@@ -63,4 +63,11 @@ class JobController
         JobDao::update($updateObj);
         Db::commit();
     }
+
+    static public function jobDelete($jobid)
+    {
+        Db::transaction();
+        JobDao::delete($jobid);
+        Db::commit();
+    }
 }
