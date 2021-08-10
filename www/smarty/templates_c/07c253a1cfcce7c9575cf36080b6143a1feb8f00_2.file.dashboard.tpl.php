@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-07-27 23:33:53
+/* Smarty version 3.1.39, created on 2021-08-11 01:08:49
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61001951d04b32_61468590',
+  'unifunc' => 'content_6112a491636a39_79698378',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1627396431,
+      1 => 1628611726,
       2 => 'file',
     ),
   ),
@@ -20,26 +20,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61001951d04b32_61468590 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6112a491636a39_79698378 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_45398923661001951cf9475_55108988', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_12601845396112a491617712_29588051', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_37706797861001951d02067_93003063', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_5728649536112a49161c793_74855250', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_117769155761001951d03b55_04020022', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9939979006112a4916360c7_20924019', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_45398923661001951cf9475_55108988 extends Smarty_Internal_Block
+class Block_12601845396112a491617712_29588051 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_45398923661001951cf9475_55108988',
+    0 => 'Block_12601845396112a491617712_29588051',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +51,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_37706797861001951d02067_93003063 extends Smarty_Internal_Block
+class Block_5728649536112a49161c793_74855250 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_37706797861001951d02067_93003063',
+    0 => 'Block_5728649536112a49161c793_74855250',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -312,68 +312,34 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="content">
       <div class="container-fluid">
         <div class="row">
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['taskList']->value, 'taskItem');
+$_smarty_tpl->tpl_vars['taskItem']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['taskItem']->value) {
+$_smarty_tpl->tpl_vars['taskItem']->do_else = false;
+?>
           <div class="col-lg-6">
-            <div class="card">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-
-            <div class="card card-primary card-outline">
-              <div class="card-body">
-                <h5 class="card-title">Card title</h5>
-
-                <p class="card-text">
-                  Some quick example text to build on the card title and make up
-                  the bulk of the card's content.
-                </p>
-                <a href="#" class="card-link">Card link</a>
-                <a href="#" class="card-link">Another link</a>
-              </div>
-            </div>
-            <!-- /.card -->
-          </div>
-          <!-- /.col-md-6 -->
-          <div class="col-lg-6">
-            <div class="card">
-              <div class="card-header">
-                <h5 class="m-0">Featured</h5>
-              </div>
-              <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
-
-                <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
-                </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
-              </div>
-            </div>
-
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <h5 class="m-0">Featured</h5>
+                <h3 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['name'], ENT_QUOTES, 'UTF-8');?>
+</h3>
               </div>
               <div class="card-body">
-                <h6 class="card-title">Special title treatment</h6>
+                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['overview'], ENT_QUOTES, 'UTF-8');?>
+</h6>
 
                 <p class="card-text">
-                  With supporting text below as a natural lead-in to additional
-                  content.
+                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
+
                 </p>
-                <a href="#" class="btn btn-primary">Go somewhere</a>
+                <a href="/job-detail.php?job=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->index, ENT_QUOTES, 'UTF-8');?>
+" class="btn btn-primary">詳細確認</a>
               </div>
             </div>
           </div>
-          <!-- /.col-md-6 -->
+          <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
         </div>
         <!-- /.row -->
       </div>
@@ -410,12 +376,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_117769155761001951d03b55_04020022 extends Smarty_Internal_Block
+class Block_9939979006112a4916360c7_20924019 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_117769155761001951d03b55_04020022',
+    0 => 'Block_9939979006112a4916360c7_20924019',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
