@@ -59,6 +59,27 @@ class JobDao
         return Db::all($sql);
     }
 
+    public static function getTaskDao($repid)
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= ", `overview`";
+        $sql .= ", `dead_line`";
+        $sql .= ", `rep_id`";
+        $sql .= ", `is_finished`";
+        $sql .= ", `createdat`";
+        $sql .= " FROM ";
+        $sql .= " `job` ";
+        $sql .= "WHERE `rep_id` = :rep_id ";
+
+        $arr = array();
+        $arr[':rep_id'] = $repid;
+
+
+        return Db::select($sql,$arr);
+    }
+
     public static function update($objJobModel)
     {
         $sql = "UPDATE ";

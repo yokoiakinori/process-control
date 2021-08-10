@@ -11,5 +11,11 @@ final class JobModel extends JobModelBase
         $dao = JobDao::getDao();
         return $dao;
     }
+
+    public function getTaskModel($repid)
+    {
+        $dao = JobDao::getTaskDao($repid);
+        return $dao;
+    }
 }
 ?>

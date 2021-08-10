@@ -3,10 +3,12 @@
 namespace ProcessControl\controller;
 use \ProcessControl\model\JobModel;
 use \ProcessControl\common\Db;
+use \ProcessControl\controller\LoginController;
 use \ProcessControl\dao\JobDao;
 use \ProcessControl\common\InvalidErrorException;
 use \ProcessControl\common\ExceptionCode;
 use \ProcessControl\common\Csrf;
+use ProcessControl\model\UserModel;
 
 class JobController
 {
@@ -70,4 +72,13 @@ class JobController
         JobDao::delete($jobid);
         Db::commit();
     }
+
+    static public function taskList()
+    {
+        $objModel = new JobModel();
+        $loginUser=LoginController::getLoginUser();
+        $repid=$loginUser->getId();
+        return $objModel->getTaskModel(intval($repid));
+    }
+    
 }
