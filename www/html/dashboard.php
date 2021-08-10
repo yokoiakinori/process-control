@@ -10,7 +10,7 @@ try{
     require_once '../common.php';
     LoginController::checkLogin();
     $taskList = JobController::taskList();
-    var_dump($taskList);
+    Template::assign("taskList",$taskList);
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
