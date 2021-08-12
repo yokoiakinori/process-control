@@ -80,5 +80,9 @@ class JobController
         $repid=$loginUser->getId();
         return $objModel->getTaskModel(intval($repid));
     }
-    
+
+    static public function clientList()
+    {
+        return JobDao::getClientDao();
+    }
 }

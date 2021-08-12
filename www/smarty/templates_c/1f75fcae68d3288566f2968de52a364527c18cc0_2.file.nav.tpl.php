@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-11 21:24:20
+/* Smarty version 3.1.39, created on 2021-08-11 21:55:25
   from '/var/www/smarty/templates/common/nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6113c17497e164_14211400',
+  'unifunc' => 'content_6113c8bde3c9e0_27335388',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1f75fcae68d3288566f2968de52a364527c18cc0' => 
     array (
       0 => '/var/www/smarty/templates/common/nav.tpl',
-      1 => 1628684598,
+      1 => 1628686523,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_6113c17497e164_14211400 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6113c8bde3c9e0_27335388 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -37,8 +37,8 @@ function content_6113c17497e164_14211400 (Smarty_Internal_Template $_smarty_tpl)
         <a href="job-list.php" class="nav-link">ジョブ一覧</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
-        <form method="get" action="">
-          <input type="submit" name="btn_logout" value="ログアウト" />
+        <form method="get" action="" class="nav">
+          <button type="submit" name="btn_logout" value="ログアウト" class="btn btn-block btn-default btn-sm">ログアウト</button>
         </form>
       </li>
     </ul>

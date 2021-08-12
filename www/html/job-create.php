@@ -10,6 +10,8 @@ try{
     require_once '../common.php';
     LoginController::checkLogin();
     LoginController::authorityCheck();
+    $clientList = JobController::clientList();
+    Template::assign("clientList",$clientList);
     JobController::jobCreate();
 
 }catch(\Exception $e){

@@ -20,6 +20,8 @@ class JobDao
         $sql .= ", `rep_id`";
         $sql .= ", `is_finished`";
         $sql .= ", `createdat`";
+        $sql .= ", `client_id`";
+        $sql .= ", `quantity`";
         $sql .= ") VALUES (";
         $sql .= "NULL ";
         $sql .= ", :name ";
@@ -28,6 +30,8 @@ class JobDao
         $sql .= ", :rep_id ";
         $sql .= ", :is_finished ";
         $sql .= ", :createdat ";
+        $sql .= ", :client_id ";
+        $sql .= ", :quantity ";
         $sql .= ")";
 
         $arr = array();
@@ -37,6 +41,8 @@ class JobDao
         $arr[':rep_id'] = defaultRep;
         $arr[':is_finished'] = 0;
         $arr[':createdat'] = date('Y-m-d');
+        $arr[':client_id'] = $insertObj["client_id"];
+        $arr[':quantity'] = $insertObj["quantity"];
 
 
         return Db::insert($sql,$arr);
@@ -78,6 +84,17 @@ class JobDao
 
 
         return Db::select($sql,$arr);
+    }
+
+    public static function getClientDao()
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= " FROM ";
+        $sql .= " `client` ";
+
+        return Db::all($sql);
     }
 
     public static function update($objJobModel)

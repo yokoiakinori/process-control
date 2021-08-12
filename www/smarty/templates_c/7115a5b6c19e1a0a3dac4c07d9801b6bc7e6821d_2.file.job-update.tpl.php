@@ -1,45 +1,46 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-09 18:23:45
+/* Smarty version 3.1.39, created on 2021-08-11 21:36:48
   from '/var/www/smarty/templates/job-update.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6110f421b00b15_79186416',
+  'unifunc' => 'content_6113c460ceafd9_70522495',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '7115a5b6c19e1a0a3dac4c07d9801b6bc7e6821d' => 
     array (
       0 => '/var/www/smarty/templates/job-update.tpl',
-      1 => 1628501022,
+      1 => 1628685374,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
+    'file:common/nav.tpl' => 1,
   ),
 ),false)) {
-function content_6110f421b00b15_79186416 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6113c460ceafd9_70522495 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_20424186756110f421abb833_94018709', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_8300964966113c460b15fd7_33218989', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_3223861546110f421ac19d9_16838211', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_4029373556113c460b1bcb2_97561211', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7953987386110f421b00235_63266551', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_18591810566113c460cea631_16206431', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_20424186756110f421abb833_94018709 extends Smarty_Internal_Block
+class Block_8300964966113c460b15fd7_33218989 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_20424186756110f421abb833_94018709',
+    0 => 'Block_8300964966113c460b15fd7_33218989',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -51,12 +52,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_3223861546110f421ac19d9_16838211 extends Smarty_Internal_Block
+class Block_4029373556113c460b1bcb2_97561211 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_3223861546110f421ac19d9_16838211',
+    0 => 'Block_4029373556113c460b1bcb2_97561211',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -64,148 +65,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/bloc
 ?>
 
 <div class="wrapper">
-  <!-- Navbar -->
-  <nav class="main-header navbar navbar-expand navbar-white navbar-light">
-    <!-- Left navbar links -->
-    <ul class="navbar-nav">
-      <li class="nav-item">
-        <a class="nav-link" data-widget="pushmenu" href="#"
-          ><i class="fas fa-bars"></i
-        ></a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="dashboard.php" class="nav-link">Home</a>
-      </li>
-      <li class="nav-item d-none d-sm-inline-block">
-        <a href="job-list.php" class="nav-link">ジョブ一覧</a>
-      </li>
-    </ul>
-
-    <!-- Right navbar links -->
-    <ul class="navbar-nav ml-auto">
-      <!-- Messages Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-comments"></i>
-          <span class="badge badge-danger navbar-badge">3</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img
-                src="dist/img/user1-128x128.jpg"
-                alt="User Avatar"
-                class="img-size-50 mr-3 img-circle"
-              />
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Brad Diesel
-                  <span class="float-right text-sm text-danger"
-                    ><i class="fas fa-star"></i
-                  ></span>
-                </h3>
-                <p class="text-sm">Call me whenever you can...</p>
-                <p class="text-sm text-muted">
-                  <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                </p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img
-                src="dist/img/user8-128x128.jpg"
-                alt="User Avatar"
-                class="img-size-50 img-circle mr-3"
-              />
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  John Pierce
-                  <span class="float-right text-sm text-muted"
-                    ><i class="fas fa-star"></i
-                  ></span>
-                </h3>
-                <p class="text-sm">I got your message bro</p>
-                <p class="text-sm text-muted">
-                  <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                </p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <!-- Message Start -->
-            <div class="media">
-              <img
-                src="dist/img/user3-128x128.jpg"
-                alt="User Avatar"
-                class="img-size-50 img-circle mr-3"
-              />
-              <div class="media-body">
-                <h3 class="dropdown-item-title">
-                  Nora Silvester
-                  <span class="float-right text-sm text-warning"
-                    ><i class="fas fa-star"></i
-                  ></span>
-                </h3>
-                <p class="text-sm">The subject goes here</p>
-                <p class="text-sm text-muted">
-                  <i class="far fa-clock mr-1"></i> 4 Hours Ago
-                </p>
-              </div>
-            </div>
-            <!-- Message End -->
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer">See All Messages</a>
-        </div>
-      </li>
-      <!-- Notifications Dropdown Menu -->
-      <li class="nav-item dropdown">
-        <a class="nav-link" data-toggle="dropdown" href="#">
-          <i class="far fa-bell"></i>
-          <span class="badge badge-warning navbar-badge">15</span>
-        </a>
-        <div class="dropdown-menu dropdown-menu-lg dropdown-menu-right">
-          <span class="dropdown-header">15 Notifications</span>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-envelope mr-2"></i> 4 new messages
-            <span class="float-right text-muted text-sm">3 mins</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-users mr-2"></i> 8 friend requests
-            <span class="float-right text-muted text-sm">12 hours</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item">
-            <i class="fas fa-file mr-2"></i> 3 new reports
-            <span class="float-right text-muted text-sm">2 days</span>
-          </a>
-          <div class="dropdown-divider"></div>
-          <a href="#" class="dropdown-item dropdown-footer"
-            >See All Notifications</a
-          >
-        </div>
-      </li>
-      <li class="nav-item">
-        <a
-          class="nav-link"
-          data-widget="control-sidebar"
-          data-slide="true"
-          href="#"
-          ><i class="fas fa-th-large"></i
-        ></a>
-      </li>
-    </ul>
-  </nav>
-  <!-- /.navbar -->
+  <?php $_smarty_tpl->_subTemplateRender("file:common/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
   <!-- Main Sidebar Container -->
   <aside class="main-sidebar sidebar-dark-primary elevation-4">
@@ -436,12 +297,12 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_7953987386110f421b00235_63266551 extends Smarty_Internal_Block
+class Block_18591810566113c460cea631_16206431 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_7953987386110f421b00235_63266551',
+    0 => 'Block_18591810566113c460cea631_16206431',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
