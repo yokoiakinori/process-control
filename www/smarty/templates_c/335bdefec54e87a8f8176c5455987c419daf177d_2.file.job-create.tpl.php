@@ -1,46 +1,47 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-12 22:31:00
+/* Smarty version 3.1.39, created on 2021-08-12 22:39:14
   from '/var/www/smarty/templates/job-create.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61152294cbba12_82257729',
+  'unifunc' => 'content_611524827a5ee5_92050484',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '335bdefec54e87a8f8176c5455987c419daf177d' => 
     array (
       0 => '/var/www/smarty/templates/job-create.tpl',
-      1 => 1628775058,
+      1 => 1628775428,
       2 => 'file',
     ),
   ),
   'includes' => 
   array (
     'file:common/nav.tpl' => 1,
+    'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_61152294cbba12_82257729 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611524827a5ee5_92050484 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_183838266061152294bd1501_57223327', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_209082439061152482742439_11574859', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177108448661152294bdb970_97996613', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1201026619611524827496d7_86076642', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_205091744961152294cba805_22458420', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1704743805611524827a4f81_90539470', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_183838266061152294bd1501_57223327 extends Smarty_Internal_Block
+class Block_209082439061152482742439_11574859 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_183838266061152294bd1501_57223327',
+    0 => 'Block_209082439061152482742439_11574859',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -52,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_177108448661152294bdb970_97996613 extends Smarty_Internal_Block
+class Block_1201026619611524827496d7_86076642 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_177108448661152294bdb970_97996613',
+    0 => 'Block_1201026619611524827496d7_86076642',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -67,84 +68,8 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/bloc
 <div class="wrapper">
   <?php $_smarty_tpl->_subTemplateRender("file:common/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?>
-
-  <!-- Main Sidebar Container -->
-  <aside class="main-sidebar sidebar-dark-primary elevation-4">
-    <!-- Brand Logo -->
-    <a href="index3.html" class="brand-link">
-      <img
-        src="dist/img/AdminLTELogo.png"
-        alt="AdminLTE Logo"
-        class="brand-image img-circle elevation-3"
-        style="opacity: 0.8"
-      />
-      <span class="brand-text font-weight-light">AdminLTE 3</span>
-    </a>
-
-    <!-- Sidebar -->
-    <div class="sidebar">
-      <!-- Sidebar user panel (optional) -->
-      <div class="user-panel mt-3 pb-3 mb-3 d-flex">
-        <div class="image">
-          <img
-            src="dist/img/user2-160x160.jpg"
-            class="img-circle elevation-2"
-            alt="User Image"
-          />
-        </div>
-        <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
-        </div>
-      </div>
-
-      <!-- Sidebar Menu -->
-      <nav class="mt-2">
-        <ul
-          class="nav nav-pills nav-sidebar flex-column"
-          data-widget="treeview"
-          role="menu"
-          data-accordion="false"
-        >
-          <!-- Add icons to the links using the .nav-icon class
-               with font-awesome or any other icon font library -->
-          <li class="nav-item has-treeview menu-open">
-            <a href="#" class="nav-link active">
-              <i class="nav-icon fas fa-tachometer-alt"></i>
-              <p>
-                ジョブ一覧
-                <i class="right fas fa-angle-left"></i>
-              </p>
-            </a>
-            <ul class="nav nav-treeview">
-              <li class="nav-item">
-                <a href="#" class="nav-link active">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Active Page</p>
-                </a>
-              </li>
-              <li class="nav-item">
-                <a href="#" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Inactive Page</p>
-                </a>
-              </li>
-            </ul>
-          </li>
-          <li class="nav-item">
-            <a href="#" class="nav-link">
-              <i class="nav-icon fas fa-th"></i>
-              <p>
-                Simple Link
-                <span class="right badge badge-danger">New</span>
-              </p>
-            </a>
-          </li>
-        </ul>
-      </nav>
-      <!-- /.sidebar-menu -->
-    </div>
-    <!-- /.sidebar -->
-  </aside>
+  <?php $_smarty_tpl->_subTemplateRender("file:common/sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -306,12 +231,12 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_205091744961152294cba805_22458420 extends Smarty_Internal_Block
+class Block_1704743805611524827a4f81_90539470 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_205091744961152294cba805_22458420',
+    0 => 'Block_1704743805611524827a4f81_90539470',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
