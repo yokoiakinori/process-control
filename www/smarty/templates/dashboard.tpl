@@ -46,6 +46,21 @@
                   納期:{$taskItem['dead_line']}
                 </p>
                 <a href="/job-detail.php?job={$taskItem@index}" class="btn btn-primary">詳細確認</a>
+                {form method="post"}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="jobrep">工程</label>
+                    <select name="Process_id" class="form-control">
+                    {foreach $processList as $process}
+                      <option value="{$process["id"]}">{$process["name"]}</option>
+                    {/foreach}
+                    </select>
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" class="btn btn-primary">送信</button>
+                </div>
+                {/form}
               </div>
             </div>
           </div>

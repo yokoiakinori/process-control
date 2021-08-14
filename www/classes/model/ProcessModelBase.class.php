@@ -24,7 +24,7 @@ class ProcessModelBase
 
     public function save()
     {
-        return ProcessDao::save($this);
+        return ProcessDao::update($this);
     }
 
     public function create()
