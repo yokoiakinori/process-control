@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-14 18:02:40
+/* Smarty version 3.1.39, created on 2021-08-14 18:26:25
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611786b02247f6_30375250',
+  'unifunc' => 'content_61178c414cd360_27434230',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1628931757,
+      1 => 1628932243,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_611786b02247f6_30375250 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61178c414cd360_27434230 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_717397460611786b019a4f7_71391341', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_171215015261178c41427b78_63390458', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_24568345611786b01a8131_16722489', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177189220361178c41432e21_27906685', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_147407192611786b0223740_58904705', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39848262861178c414cbb66_71633815', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_717397460611786b019a4f7_71391341 extends Smarty_Internal_Block
+class Block_171215015261178c41427b78_63390458 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_717397460611786b019a4f7_71391341',
+    0 => 'Block_171215015261178c41427b78_63390458',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_24568345611786b01a8131_16722489 extends Smarty_Internal_Block
+class Block_177189220361178c41432e21_27906685 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_24568345611786b01a8131_16722489',
+    0 => 'Block_177189220361178c41432e21_27906685',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -132,7 +132,7 @@ ob_start();?>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="jobrep">工程</label>
-                    <select name="Process_id" class="form-control">
+                    <select name="process_id" class="form-control">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['processList']->value, 'process');
 $_smarty_tpl->tpl_vars['process']->do_else = true;
@@ -146,6 +146,8 @@ $_smarty_tpl->tpl_vars['process']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
+                    <input type="hidden" name="job_id" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['id'], ENT_QUOTES, 'UTF-8');?>
+">
                   </div>
                 </div>
                 <div class="card-footer">
@@ -198,12 +200,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_147407192611786b0223740_58904705 extends Smarty_Internal_Block
+class Block_39848262861178c414cbb66_71633815 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_147407192611786b0223740_58904705',
+    0 => 'Block_39848262861178c414cbb66_71633815',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

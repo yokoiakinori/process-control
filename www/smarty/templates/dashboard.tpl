@@ -50,11 +50,12 @@
                 <div class="card-body">
                   <div class="form-group">
                     <label for="jobrep">工程</label>
-                    <select name="Process_id" class="form-control">
+                    <select name="process_id" class="form-control">
                     {foreach $processList as $process}
                       <option value="{$process["id"]}">{$process["name"]}</option>
                     {/foreach}
                     </select>
+                    <input type="hidden" name="job_id" value="{$taskItem['id']}">
                   </div>
                 </div>
                 <div class="card-footer">

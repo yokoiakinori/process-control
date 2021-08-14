@@ -10,7 +10,7 @@ class ProcessDao
     public static function insert($insertObj)
     {
         $sql = "INSERT INTO ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "(";
         $sql .= "`id`";
         $sql .= ", `start_time`";
@@ -26,7 +26,7 @@ class ProcessDao
         $sql .= ")";
 
         $arr = array();
-        $arr[':start_time'] = $insertObj["start_time"];
+        $arr[':start_time'] = date('Y-m-d H:i:s');
         $arr[':process_id'] = $insertObj["process_id"];
         $arr[':job_id'] = $insertObj["job_id"];
 

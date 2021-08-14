@@ -21,11 +21,10 @@ class ProcessController
         Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
 
         $insertObj = [
-            "start_time" => filter_input(INPUT_POST,'start_time'),
             "process_id" => filter_input(INPUT_POST,'process_id'),
             "job_id" => filter_input(INPUT_POST,'job_id'),
         ];
-        if($insertObj["start_time"] == ''||$insertObj["process_id"] == ''||$insertObj["job_id"] == ''){
+        if($insertObj["process_id"] == ''||$insertObj["job_id"] == ''){
             return;
         }
 
