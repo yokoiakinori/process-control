@@ -59,7 +59,7 @@
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">送信</button>
+                  <button type="submit" name="process_insert" value="工程入力" class="btn btn-primary">送信</button>
                 </div>
                 {/form}
               </div>

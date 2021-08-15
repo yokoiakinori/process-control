@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-14 18:26:25
+/* Smarty version 3.1.39, created on 2021-08-15 08:33:31
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61178c414cd360_27434230',
+  'unifunc' => 'content_611852cbaecc82_51385475',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1628932243,
+      1 => 1628983853,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_61178c414cd360_27434230 (Smarty_Internal_Template $_smarty_tpl) {
+function content_611852cbaecc82_51385475 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_171215015261178c41427b78_63390458', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1783599195611852cba529a5_66728724', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_177189220361178c41432e21_27906685', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1736653663611852cba5d011_78474909', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_39848262861178c414cbb66_71633815', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1942960446611852cbaebdf7_62098588', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_171215015261178c41427b78_63390458 extends Smarty_Internal_Block
+class Block_1783599195611852cba529a5_66728724 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_171215015261178c41427b78_63390458',
+    0 => 'Block_1783599195611852cba529a5_66728724',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_177189220361178c41432e21_27906685 extends Smarty_Internal_Block
+class Block_1736653663611852cba5d011_78474909 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_177189220361178c41432e21_27906685',
+    0 => 'Block_1736653663611852cba5d011_78474909',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -151,7 +151,7 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </div>
                 </div>
                 <div class="card-footer">
-                  <button type="submit" class="btn btn-primary">送信</button>
+                  <button type="submit" name="process_insert" value="工程入力" class="btn btn-primary">送信</button>
                 </div>
                 <?php $_block_repeat=false;
 echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
@@ -200,12 +200,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_39848262861178c414cbb66_71633815 extends Smarty_Internal_Block
+class Block_1942960446611852cbaebdf7_62098588 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_39848262861178c414cbb66_71633815',
+    0 => 'Block_1942960446611852cbaebdf7_62098588',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

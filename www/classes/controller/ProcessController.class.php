@@ -31,6 +31,7 @@ class ProcessController
         Db::transaction();
         ProcessDao::insert($insertObj);
         Db::commit();
+        header('Location: /dashboard.php');
     }
 
     static public function jobList()

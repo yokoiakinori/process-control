@@ -68,16 +68,21 @@ class JobDao
     public static function getTaskDao($repid)
     {
         $sql = "SELECT ";
-        $sql .= "`id`";
-        $sql .= ", `name`";
-        $sql .= ", `overview`";
-        $sql .= ", `dead_line`";
-        $sql .= ", `rep_id`";
-        $sql .= ", `is_finished`";
-        $sql .= ", `createdat`";
+        $sql .= "job.id";
+        $sql .= ", job.name";
+        $sql .= ", job.overview";
+        $sql .= ", job.dead_line";
+        $sql .= ", job.rep_id";
+        $sql .= ", job.is_finished";
+        $sql .= ", job.createdat";
+        $sql .= ", process.process_id";
         $sql .= " FROM ";
-        $sql .= " `job` ";
-        $sql .= "WHERE `rep_id` = :rep_id ";
+        $sql .= "`job` ";
+        $sql .= "INNER JOIN ";
+        $sql .= " `process` ";
+        $sql .= " ON ";
+        $sql .= "job.id = process.job_id ";
+        $sql .= "WHERE job.rep_id = :rep_id ";
 
         $arr = array();
         $arr[':rep_id'] = $repid;
