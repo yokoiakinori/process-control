@@ -37,15 +37,41 @@
           <div class="col-lg-6">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title">{$taskItem['name']}</h3>
+                <h3 class="card-title">{$taskItem[0]['name']}</h3>
               </div>
               <div class="card-body">
-                <h6 class="card-title">{$taskItem['overview']}</h6>
+                <h6 class="card-title">{$taskItem[0]['overview']}</h6>
 
                 <p class="card-text">
-                  納期:{$taskItem['dead_line']}
+                  納期:{$taskItem[0]['dead_line']}
                 </p>
                 <a href="/job-detail.php?job={$taskItem@index}" class="btn btn-primary">詳細確認</a>
+                <div class="card-body">
+                {foreach $taskItem as $currentProcess}
+                {if isset($currentProcess['process_id'])}
+                  <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
+                <p class="card-text">
+                  開始:{$currentProcess['start_time']}
+                </p>
+                {/if}
+                {/foreach}
+                </div>
+                {form method="post"}
+                <div class="card-body">
+                  <div class="form-group">
+                    <label for="jobrep">工程入力</label>
+                    <select name="process_id" class="form-control">
+                    {foreach $processList as $process}
+                      <option value="{$process["id"]}">{$process["name"]}</option>
+                    {/foreach}
+                    </select>
+                    <input type="hidden" name="job_id" value="{$taskItem[0]['id']}">
+                  </div>
+                </div>
+                <div class="card-footer">
+                  <button type="submit" name="process_insert" value="工程入力" class="btn btn-primary">送信</button>
+                </div>
+                {/form}
               </div>
             </div>
           </div>

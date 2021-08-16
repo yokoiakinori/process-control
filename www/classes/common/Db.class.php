@@ -59,6 +59,13 @@ class Db
         return $stmt->fetchAll();
     }
 
+    public static function groupselect($sql,array $arr=array())
+    {
+        $stmt = self::getInstance()->prepare($sql);
+        $stmt->execute($arr);
+        return $stmt->fetchAll(PDO::FETCH_ASSOC|PDO::FETCH_GROUP);
+    }
+
     public static function all($sql)
     {
         $stmt = self::getInstance()->prepare($sql);

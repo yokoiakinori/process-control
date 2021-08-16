@@ -4,15 +4,15 @@ namespace ProcessControl\controller;
 use \ProcessControl\model\JobModel;
 use \ProcessControl\common\Db;
 use \ProcessControl\controller\LoginController;
-use \ProcessControl\dao\JobDao;
+use \ProcessControl\dao\ProcessDao;
 use \ProcessControl\common\InvalidErrorException;
 use \ProcessControl\common\ExceptionCode;
 use \ProcessControl\common\Csrf;
 use ProcessControl\model\UserModel;
 
-class JobController
+class ProcessController
 {
-    static public function jobCreate()
+    static public function ProcessCreate()
     {
         if(!filter_input_array(INPUT_POST)){
             return;
@@ -21,19 +21,17 @@ class JobController
         Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
 
         $insertObj = [
-            "name" => filter_input(INPUT_POST,'name'),
-            "overview" => filter_input(INPUT_POST,'overview'),
-            "dead_line" => filter_input(INPUT_POST,'dead_line'),
-            "client_id" => filter_input(INPUT_POST,'client_id'),
-            "quantity" => filter_input(INPUT_POST,'quantity'),
+            "process_id" => filter_input(INPUT_POST,'process_id'),
+            "job_id" => filter_input(INPUT_POST,'job_id'),
         ];
-        if($insertObj["name"] == ''||$insertObj["overview"] == ''||$insertObj["dead_line"] == ''||$insertObj["client_id"] == ''||$insertObj["quantity"] == ''){
+        if($insertObj["process_id"] == ''||$insertObj["job_id"] == ''){
             return;
         }
 
         Db::transaction();
-        JobDao::insert($insertObj);
+        ProcessDao::insert($insertObj);
         Db::commit();
+        header('Location: /dashboard.php');
     }
 
     static public function jobList()
@@ -64,14 +62,14 @@ class JobController
         }
 
         Db::transaction();
-        JobDao::update($updateObj);
+        ProcessDao::update($updateObj);
         Db::commit();
     }
 
     static public function jobDelete($jobid)
     {
         Db::transaction();
-        JobDao::delete($jobid);
+        ProcessDao::delete($jobid);
         Db::commit();
     }
 
@@ -83,8 +81,8 @@ class JobController
         return $objModel->getTaskModel(intval($repid));
     }
 
-    static public function clientList()
+    static public function processNameList()
     {
-        return JobDao::getClientDao();
+        return ProcessDao::getProcessNameDao();
     }
 }

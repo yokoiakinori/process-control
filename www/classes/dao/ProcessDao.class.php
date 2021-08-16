@@ -9,41 +9,26 @@ class ProcessDao
 {
     public static function insert($insertObj)
     {
-        define('defaultRep',1);
         $sql = "INSERT INTO ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "(";
         $sql .= "`id`";
-        $sql .= ", `name`";
-        $sql .= ", `overview`";
-        $sql .= ", `dead_line`";
-        $sql .= ", `rep_id`";
-        $sql .= ", `is_finished`";
-        $sql .= ", `createdat`";
-        $sql .= ", `client_id`";
-        $sql .= ", `quantity`";
+        $sql .= ", `start_time`";
+        $sql .= ", `end_time`";
+        $sql .= ", `process_id`";
+        $sql .= ", `job_id`";
         $sql .= ") VALUES (";
         $sql .= "NULL ";
-        $sql .= ", :name ";
-        $sql .= ", :overview ";
-        $sql .= ", :dead_line ";
-        $sql .= ", :rep_id ";
-        $sql .= ", :is_finished ";
-        $sql .= ", :createdat ";
-        $sql .= ", :client_id ";
-        $sql .= ", :quantity ";
+        $sql .= ", :start_time ";
+        $sql .= ", NULL ";
+        $sql .= ", :process_id ";
+        $sql .= ", :job_id ";
         $sql .= ")";
 
         $arr = array();
-        $arr[':name'] = $insertObj["name"];
-        $arr[':overview'] = $insertObj["overview"];
-        $arr[':dead_line'] = $insertObj["dead_line"];
-        $arr[':rep_id'] = defaultRep;
-        $arr[':is_finished'] = 0;
-        $arr[':createdat'] = date('Y-m-d');
-        $arr[':client_id'] = $insertObj["client_id"];
-        $arr[':quantity'] = $insertObj["quantity"];
-
+        $arr[':start_time'] = date('Y-m-d H:i:s');
+        $arr[':process_id'] = $insertObj["process_id"];
+        $arr[':job_id'] = $insertObj["job_id"];
 
         return Db::insert($sql,$arr);
     }
@@ -65,34 +50,13 @@ class ProcessDao
         return Db::all($sql);
     }
 
-    public static function getTaskDao($repid)
-    {
-        $sql = "SELECT ";
-        $sql .= "`id`";
-        $sql .= ", `name`";
-        $sql .= ", `overview`";
-        $sql .= ", `dead_line`";
-        $sql .= ", `rep_id`";
-        $sql .= ", `is_finished`";
-        $sql .= ", `createdat`";
-        $sql .= " FROM ";
-        $sql .= " `job` ";
-        $sql .= "WHERE `rep_id` = :rep_id ";
-
-        $arr = array();
-        $arr[':rep_id'] = $repid;
-
-
-        return Db::select($sql,$arr);
-    }
-
-    public static function getClientDao()
+    public static function getProcessNameDao()
     {
         $sql = "SELECT ";
         $sql .= "`id`";
         $sql .= ", `name`";
         $sql .= " FROM ";
-        $sql .= " `client` ";
+        $sql .= " `process_name` ";
 
         return Db::all($sql);
     }
