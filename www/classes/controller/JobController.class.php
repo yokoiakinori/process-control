@@ -24,8 +24,10 @@ class JobController
             "name" => filter_input(INPUT_POST,'name'),
             "overview" => filter_input(INPUT_POST,'overview'),
             "dead_line" => filter_input(INPUT_POST,'dead_line'),
+            "client_id" => filter_input(INPUT_POST,'client_id'),
+            "quantity" => filter_input(INPUT_POST,'quantity'),
         ];
-        if($insertObj["name"] == ''||$insertObj["overview"] == ''||$insertObj["dead_line"] == ''){
+        if($insertObj["name"] == ''||$insertObj["overview"] == ''||$insertObj["dead_line"] == ''||$insertObj["client_id"] == ''||$insertObj["quantity"] == ''){
             return;
         }
 

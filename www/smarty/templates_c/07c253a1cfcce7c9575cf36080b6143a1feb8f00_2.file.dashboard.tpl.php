@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-15 08:33:31
+/* Smarty version 3.1.39, created on 2021-08-16 11:23:39
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611852cbaecc82_51385475',
+  'unifunc' => 'content_6119cc2bebc4d3_98940684',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1628983853,
+      1 => 1629080615,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_611852cbaecc82_51385475 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6119cc2bebc4d3_98940684 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1783599195611852cba529a5_66728724', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2504697736119cc2bdea1d1_83081744', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1736653663611852cba5d011_78474909', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7074473636119cc2bdf1990_37108084', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1942960446611852cbaebdf7_62098588', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7745999836119cc2bebbaa3_91898788', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1783599195611852cba529a5_66728724 extends Smarty_Internal_Block
+class Block_2504697736119cc2bdea1d1_83081744 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1783599195611852cba529a5_66728724',
+    0 => 'Block_2504697736119cc2bdea1d1_83081744',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_1736653663611852cba5d011_78474909 extends Smarty_Internal_Block
+class Block_7074473636119cc2bdf1990_37108084 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1736653663611852cba5d011_78474909',
+    0 => 'Block_7074473636119cc2bdf1990_37108084',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,19 +111,38 @@ $__foreach_taskItem_0_saved = $_smarty_tpl->tpl_vars['taskItem'];
           <div class="col-lg-6">
             <div class="card card-primary card-outline">
               <div class="card-header">
-                <h3 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['name'], ENT_QUOTES, 'UTF-8');?>
+                <h3 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value[0]['name'], ENT_QUOTES, 'UTF-8');?>
 </h3>
               </div>
               <div class="card-body">
-                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['overview'], ENT_QUOTES, 'UTF-8');?>
+                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value[0]['overview'], ENT_QUOTES, 'UTF-8');?>
 </h6>
 
                 <p class="card-text">
-                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
+                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value[0]['dead_line'], ENT_QUOTES, 'UTF-8');?>
 
                 </p>
                 <a href="/job-detail.php?job=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->index, ENT_QUOTES, 'UTF-8');?>
 " class="btn btn-primary">詳細確認</a>
+                <div class="card-body">
+                <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['taskItem']->value, 'currentProcess');
+$_smarty_tpl->tpl_vars['currentProcess']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['currentProcess']->value) {
+$_smarty_tpl->tpl_vars['currentProcess']->do_else = false;
+?>
+                <?php if ((isset($_smarty_tpl->tpl_vars['currentProcess']->value['process_id']))) {?>
+                  <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['processList']->value[$_smarty_tpl->tpl_vars['currentProcess']->value['process_id']-1]["name"], ENT_QUOTES, 'UTF-8');?>
+</h6>
+                <p class="card-text">
+                  開始:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
+
+                </p>
+                <?php }?>
+                <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                </div>
                 <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
 $_block_repeat=true;
 echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
@@ -131,7 +150,7 @@ while ($_block_repeat) {
 ob_start();?>
                 <div class="card-body">
                   <div class="form-group">
-                    <label for="jobrep">工程</label>
+                    <label for="jobrep">工程入力</label>
                     <select name="process_id" class="form-control">
                     <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['processList']->value, 'process');
@@ -146,7 +165,7 @@ $_smarty_tpl->tpl_vars['process']->do_else = false;
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </select>
-                    <input type="hidden" name="job_id" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value['id'], ENT_QUOTES, 'UTF-8');?>
+                    <input type="hidden" name="job_id" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value[0]['id'], ENT_QUOTES, 'UTF-8');?>
 ">
                   </div>
                 </div>
@@ -200,12 +219,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1942960446611852cbaebdf7_62098588 extends Smarty_Internal_Block
+class Block_7745999836119cc2bebbaa3_91898788 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1942960446611852cbaebdf7_62098588',
+    0 => 'Block_7745999836119cc2bebbaa3_91898788',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

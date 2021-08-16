@@ -76,9 +76,10 @@ class JobDao
         $sql .= ", job.is_finished";
         $sql .= ", job.createdat";
         $sql .= ", process.process_id";
+        $sql .= ", process.start_time";
         $sql .= " FROM ";
         $sql .= "`job` ";
-        $sql .= "INNER JOIN ";
+        $sql .= "LEFT JOIN ";
         $sql .= " `process` ";
         $sql .= " ON ";
         $sql .= "job.id = process.job_id ";
@@ -88,7 +89,7 @@ class JobDao
         $arr[':rep_id'] = $repid;
 
 
-        return Db::select($sql,$arr);
+        return Db::groupselect($sql,$arr);
     }
 
     public static function getClientDao()

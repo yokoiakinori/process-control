@@ -12,7 +12,6 @@ try{
     LoginController::checkLogin();
     $taskList = JobController::taskList();
     Template::assign("taskList",$taskList);
-    var_dump($taskList);
     $processList = ProcessController::processNameList();
     Template::assign("processList",$processList);
     ProcessController::ProcessCreate();
