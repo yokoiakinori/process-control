@@ -2,7 +2,7 @@ DROP SCHEMA IF EXISTS process_control;
 CREATE SCHEMA process_control;
 USE process_control;
 
-DROP TABLE IF EXISTS user,position,job;
+DROP TABLE IF EXISTS user,position,job,process;
 
 
 START TRANSACTION;
@@ -63,3 +63,12 @@ ALTER TABLE `job`
 ALTER TABLE `job`
   MODIFY `id` int UNSIGNED NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=10;
 COMMIT;
+
+
+CREATE TABLE `process` (
+  `id` int UNSIGNED NOT NULL,
+  `start_time` datetime NOT NULL,
+  `end_time` datetime NOT NULL,
+  `process_id` int UNSIGNED NOT NULL,
+  `job_id` int UNSIGNED NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb3;

@@ -46,16 +46,25 @@
                   納期:{$taskItem[0]['dead_line']}
                 </p>
                 <a href="/job-detail.php?job={$taskItem@index}" class="btn btn-primary">詳細確認</a>
-                <div class="card-body">
                 {foreach $taskItem as $currentProcess}
                 {if isset($currentProcess['process_id'])}
-                  <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
-                <p class="card-text">
-                  開始:{$currentProcess['start_time']}
-                </p>
+                  {if !$currentProcess['end_time']==null}
+                    <div class="card-body">
+                      <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
+                      <p class="card-text">
+                      開始:{$currentProcess['start_time']}
+                      </p>
+                    </div>
+                  {else}
+                      <div class="card-body bg-primary">
+                        <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
+                        <p class="card-text">
+                        開始:{$currentProcess['start_time']}
+                        </p>
+                      </div>
+                  {/if}
                 {/if}
                 {/foreach}
-                </div>
                 {form method="post"}
                 <div class="card-body">
                   <div class="form-group">
