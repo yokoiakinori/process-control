@@ -34,36 +34,31 @@ class ProcessController
         header('Location: /dashboard.php');
     }
 
-    static public function jobList()
-    {
-        $objModel = new JobModel();
-        return $objModel->getModel();
-    }
-
-    static public function jobUpdate($jobid)
+    static public function ProcessFinish()
     {
         if(!filter_input_array(INPUT_POST)){
             return;
         }
 
         Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
-        $repId=intval(filter_input(INPUT_POST,'rep_id'));
 
-
-        $updateObj = [
-            "id" => $jobid,
-            "name" => filter_input(INPUT_POST,'name'),
-            "overview" => filter_input(INPUT_POST,'overview'),
-            "dead_line" => filter_input(INPUT_POST,'dead_line'),
-            "rep_id" => $repId,
+        $insertObj = [
+            "id" => filter_input(INPUT_POST,'process_finish'),
         ];
-        if($updateObj["name"] == ''||$updateObj["overview"] == ''||$updateObj["dead_line"] == ''||$updateObj["rep_id"]==''){
+        if($insertObj["id"] == ''){
             return;
         }
 
         Db::transaction();
-        ProcessDao::update($updateObj);
+        ProcessDao::finish($insertObj);
         Db::commit();
+        header('Location: /dashboard.php');
+    }
+
+    static public function jobList()
+    {
+        $objModel = new JobModel();
+        return $objModel->getModel();
     }
 
     static public function jobDelete($jobid)

@@ -61,6 +61,9 @@
                         <p class="card-text">
                         開始:{$currentProcess['start_time']}
                         </p>
+                        {form method="post"}
+                        <button type="submit" name="process_finish" value="{$currentProcess['process_id']}" class="btn btn-primary">完了</button>
+                        {/form}
                       </div>
                   {/if}
                 {/if}

@@ -61,23 +61,17 @@ class ProcessDao
         return Db::all($sql);
     }
 
-    public static function update($objJobModel)
+    public static function finish($objJobModel)
     {
         $sql = "UPDATE ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "SET ";
-        $sql .= "`name` = :name ";
-        $sql .= ", `overview` = :overview ";
-        $sql .= ", `dead_line` = :dead_line ";
-        $sql .= ", `rep_id` = :rep_id ";
+        $sql .= "`end_time` = :end_time ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();
         $arr[':id'] = $objJobModel["id"];
-        $arr[':name'] = $objJobModel["name"];
-        $arr[':overview'] = $objJobModel["overview"];
-        $arr[':dead_line'] = $objJobModel["dead_line"];
-        $arr[':rep_id'] = $objJobModel["rep_id"];
+        $arr[':end_time'] = date('Y-m-d H:i:s');
 
         return Db::update($sql,$arr);
     }

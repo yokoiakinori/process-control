@@ -15,6 +15,9 @@ try{
     $processList = ProcessController::processNameList();
     Template::assign("processList",$processList);
     ProcessController::ProcessCreate();
+    if( !empty($_POST['process_finish']) ) {
+        ProcessController::ProcessFinish();
+    }
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
