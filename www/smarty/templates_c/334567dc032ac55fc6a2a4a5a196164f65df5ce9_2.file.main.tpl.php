@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-08 12:49:11
+/* Smarty version 3.1.39, created on 2021-08-21 11:45:15
   from '/var/www/smarty/templates/layout/main.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_610f5437c65157_28508564',
+  'unifunc' => 'content_612068bb436299_01328706',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '334567dc032ac55fc6a2a4a5a196164f65df5ce9' => 
     array (
       0 => '/var/www/smarty/templates/layout/main.tpl',
-      1 => 1628394526,
+      1 => 1629513846,
       2 => 'file',
     ),
   ),
@@ -21,7 +21,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:widget/exception.tpl' => 1,
   ),
 ),false)) {
-function content_610f5437c65157_28508564 (Smarty_Internal_Template $_smarty_tpl) {
+function content_612068bb436299_01328706 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
 ?>
@@ -51,14 +51,14 @@ $_smarty_tpl->inheritance->init($_smarty_tpl, false);
       href="plugins/tempusdominus-bootstrap-4/css/tempusdominus-bootstrap-4.min.css"
     />
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_689854530610f5437c5c4e8_57995162', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1556632992612068bb430527_73609528', 'meta');
 ?>
 
   </head>
   <body class="hold-transition sidebar-mini">
     <?php $_smarty_tpl->_subTemplateRender('file:widget/exception.tpl', $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
 ?> <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110308804610f5437c5eb64_20062722', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2088659567612068bb431998_12417602', 'content');
 ?>
 
 
@@ -116,7 +116,7 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110308804610f5437c
         //Date and time picker
         $("#reservationdatetime").datetimepicker({
           icons: { time: "far fa-clock" },
-          format: "YYYY/MM/DD",
+          format: "YYYY/MM/DD HH:mm",
         });
 
         //Date range picker
@@ -593,19 +593,19 @@ $_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_110308804610f5437c
     </div>
 
     <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1314948786610f5437c63512_33681221', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1683115362612068bb434e85_70333431', 'script');
 ?>
 
   </body>
 </html>
 <?php }
 /* {block 'meta'} */
-class Block_689854530610f5437c5c4e8_57995162 extends Smarty_Internal_Block
+class Block_1556632992612068bb430527_73609528 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_689854530610f5437c5c4e8_57995162',
+    0 => 'Block_1556632992612068bb430527_73609528',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -615,12 +615,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_110308804610f5437c5eb64_20062722 extends Smarty_Internal_Block
+class Block_2088659567612068bb431998_12417602 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_110308804610f5437c5eb64_20062722',
+    0 => 'Block_2088659567612068bb431998_12417602',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -630,12 +630,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1314948786610f5437c63512_33681221 extends Smarty_Internal_Block
+class Block_1683115362612068bb434e85_70333431 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1314948786610f5437c63512_33681221',
+    0 => 'Block_1683115362612068bb434e85_70333431',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
