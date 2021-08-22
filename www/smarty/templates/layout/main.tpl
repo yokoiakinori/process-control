@@ -65,7 +65,15 @@
         //Date and time picker
         $("#reservationdatetime").datetimepicker({
           icons: { time: "far fa-clock" },
-          format: "YYYY/MM/DD",
+          format: "YYYY/MM/DD HH:mm",
+        });
+        $("#reservationdatetime_start").datetimepicker({
+          icons: { time: "far fa-clock" },
+          format: "YYYY/MM/DD HH:mm",
+        });
+        $("#reservationdatetime_end").datetimepicker({
+          icons: { time: "far fa-clock" },
+          format: "YYYY/MM/DD HH:mm",
         });
 
         //Date range picker

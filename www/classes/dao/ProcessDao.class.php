@@ -61,23 +61,34 @@ class ProcessDao
         return Db::all($sql);
     }
 
-    public static function update($objJobModel)
+    public static function finish($objJobModel)
     {
         $sql = "UPDATE ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "SET ";
-        $sql .= "`name` = :name ";
-        $sql .= ", `overview` = :overview ";
-        $sql .= ", `dead_line` = :dead_line ";
-        $sql .= ", `rep_id` = :rep_id ";
+        $sql .= "`end_time` = :end_time ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();
         $arr[':id'] = $objJobModel["id"];
-        $arr[':name'] = $objJobModel["name"];
-        $arr[':overview'] = $objJobModel["overview"];
-        $arr[':dead_line'] = $objJobModel["dead_line"];
-        $arr[':rep_id'] = $objJobModel["rep_id"];
+        $arr[':end_time'] = date('Y-m-d H:i:s');
+
+        return Db::update($sql,$arr);
+    }
+
+    public static function edit($objJobModel)
+    {
+        $sql = "UPDATE ";
+        $sql .= "`process` ";
+        $sql .= "SET ";
+        $sql .= "`start_time` = :start_time ";
+        $sql .= ", `end_time` = :end_time ";
+        $sql .= "WHERE `id` = :id ";
+
+        $arr = array();
+        $arr[':id'] = $objJobModel["id"];
+        $arr[':start_time'] = $objJobModel["start_time"];
+        $arr[':end_time'] = $objJobModel["end_time"];
 
         return Db::update($sql,$arr);
     }
@@ -86,7 +97,7 @@ class ProcessDao
     {
         $sql = "DELETE ";
         $sql .= "FROM ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();

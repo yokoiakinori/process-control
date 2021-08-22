@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-16 11:23:39
+/* Smarty version 3.1.39, created on 2021-08-22 21:04:59
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6119cc2bebc4d3_98940684',
+  'unifunc' => 'content_61223d6b49b775_30959118',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1629080615,
+      1 => 1629633893,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_6119cc2bebc4d3_98940684 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61223d6b49b775_30959118 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2504697736119cc2bdea1d1_83081744', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_113590052761223d6b447fb8_55215142', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7074473636119cc2bdf1990_37108084', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_67827640861223d6b44c624_84200651', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7745999836119cc2bebbaa3_91898788', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_214216338761223d6b49af22_39439104', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_2504697736119cc2bdea1d1_83081744 extends Smarty_Internal_Block
+class Block_113590052761223d6b447fb8_55215142 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_2504697736119cc2bdea1d1_83081744',
+    0 => 'Block_113590052761223d6b447fb8_55215142',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_7074473636119cc2bdf1990_37108084 extends Smarty_Internal_Block
+class Block_67827640861223d6b44c624_84200651 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_7074473636119cc2bdf1990_37108084',
+    0 => 'Block_67827640861223d6b44c624_84200651',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -124,7 +124,6 @@ $__foreach_taskItem_0_saved = $_smarty_tpl->tpl_vars['taskItem'];
                 </p>
                 <a href="/job-detail.php?job=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->index, ENT_QUOTES, 'UTF-8');?>
 " class="btn btn-primary">詳細確認</a>
-                <div class="card-body">
                 <?php
 $_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['taskItem']->value, 'currentProcess');
 $_smarty_tpl->tpl_vars['currentProcess']->do_else = true;
@@ -132,17 +131,126 @@ if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['currentProcess']
 $_smarty_tpl->tpl_vars['currentProcess']->do_else = false;
 ?>
                 <?php if ((isset($_smarty_tpl->tpl_vars['currentProcess']->value['process_id']))) {?>
-                  <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['processList']->value[$_smarty_tpl->tpl_vars['currentProcess']->value['process_id']-1]["name"], ENT_QUOTES, 'UTF-8');?>
+                  <?php if (!$_smarty_tpl->tpl_vars['currentProcess']->value['end_time'] == null) {?>
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['processList']->value[$_smarty_tpl->tpl_vars['currentProcess']->value['process_id']-1]["name"], ENT_QUOTES, 'UTF-8');?>
 </h6>
-                <p class="card-text">
-                  開始:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
+                        <div class="card-tools">
+                          <form method="GET" action="" onSubmit="return check()">
+                            <button type="submit" class="btn btn-tool"  name="btn_processRemove"><i class="fas fa-times"></i>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                        開始:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
 
-                </p>
+                        </p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                           工程入力の修正
+                        </button>
+                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">入力工程の時間修正</h4>
+                              </div>
+                              <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
+$_block_repeat=true;
+echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
+                                <div class="modal-body">
+                                  <label for="process_start">開始時間</label>
+                                  <div
+                                    class="input-group date"
+                                    id="reservationdatetime_start"
+                                    data-target-input="nearest"
+                                  >
+                                    <input
+                                      type="text"
+                                      class="form-control datetimepicker-input"
+                                      name="start_time"
+                                      value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
+"
+                                      data-target="#reservationdatetime_start"
+                                    />
+                                    <div
+                                      class="input-group-append"
+                                      data-target="#reservationdatetime_start"
+                                      data-toggle="datetimepicker"
+                                    >
+                                      <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <label for="process_end">終了時間</label>
+                                  <div
+                                    class="input-group date"
+                                    id="reservationdatetime_end"
+                                    data-target-input="nearest"
+                                  >
+                                    <input
+                                      type="text"
+                                      class="form-control datetimepicker-input"
+                                      name="end_time"
+                                      value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['end_time'], ENT_QUOTES, 'UTF-8');?>
+"
+                                      data-target="#reservationdatetime_end"
+                                    />
+                                    <div
+                                      class="input-group-append"
+                                      data-target="#reservationdatetime_end"
+                                      data-toggle="datetimepicker"
+                                    >
+                                      <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+                                  <button type="submit" name="process_edit" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['process_id'], ENT_QUOTES, 'UTF-8');?>
+" class="btn btn-primary">送信</button>
+                                </div>
+                              <?php $_block_repeat=false;
+echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
+                            </div>
+                          </div>
+                        </div>
+                      </div>
+                    </div>
+                  <?php } else { ?>
+                      <div class="card-body bg-primary">
+                        <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['processList']->value[$_smarty_tpl->tpl_vars['currentProcess']->value['process_id']-1]["name"], ENT_QUOTES, 'UTF-8');?>
+</h6>
+                        <p class="card-text">
+                        開始:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
+
+                        </p>
+                        <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
+$_block_repeat=true;
+echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
+                        <button type="submit" name="process_finish" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['process_id'], ENT_QUOTES, 'UTF-8');?>
+" class="btn btn-primary">完了</button>
+                        <?php $_block_repeat=false;
+echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
+                      </div>
+                  <?php }?>
                 <?php }?>
                 <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
-                </div>
                 <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
 $_block_repeat=true;
 echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
@@ -219,12 +327,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_7745999836119cc2bebbaa3_91898788 extends Smarty_Internal_Block
+class Block_214216338761223d6b49af22_39439104 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_7745999836119cc2bebbaa3_91898788',
+    0 => 'Block_214216338761223d6b49af22_39439104',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

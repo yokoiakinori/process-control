@@ -34,51 +34,55 @@ class ProcessController
         header('Location: /dashboard.php');
     }
 
-    static public function jobList()
-    {
-        $objModel = new JobModel();
-        return $objModel->getModel();
-    }
-
-    static public function jobUpdate($jobid)
+    static public function ProcessFinish()
     {
         if(!filter_input_array(INPUT_POST)){
             return;
         }
 
         Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
-        $repId=intval(filter_input(INPUT_POST,'rep_id'));
 
-
-        $updateObj = [
-            "id" => $jobid,
-            "name" => filter_input(INPUT_POST,'name'),
-            "overview" => filter_input(INPUT_POST,'overview'),
-            "dead_line" => filter_input(INPUT_POST,'dead_line'),
-            "rep_id" => $repId,
+        $insertObj = [
+            "id" => filter_input(INPUT_POST,'process_finish'),
         ];
-        if($updateObj["name"] == ''||$updateObj["overview"] == ''||$updateObj["dead_line"] == ''||$updateObj["rep_id"]==''){
+        if($insertObj["id"] == ''){
             return;
         }
 
         Db::transaction();
-        ProcessDao::update($updateObj);
+        ProcessDao::finish($insertObj);
         Db::commit();
+        header('Location: /dashboard.php');
     }
 
-    static public function jobDelete($jobid)
+    static public function ProcessEdit()
+    {
+        if(!filter_input_array(INPUT_POST)){
+            return;
+        }
+
+        Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
+
+        $insertObj = [
+            "id" => filter_input(INPUT_POST,'process_edit'),
+            "start_time" => filter_input(INPUT_POST,'start_time'),
+            "end_time" => filter_input(INPUT_POST,'end_time'),
+        ];
+        if($insertObj["id"] == ''){
+            return;
+        }
+
+        Db::transaction();
+        ProcessDao::edit($insertObj);
+        Db::commit();
+        header('Location: /dashboard.php');
+    }
+
+    static public function processDelete($jobid)
     {
         Db::transaction();
         ProcessDao::delete($jobid);
         Db::commit();
-    }
-
-    static public function taskList()
-    {
-        $objModel = new JobModel();
-        $loginUser=LoginController::getLoginUser();
-        $repid=$loginUser->getId();
-        return $objModel->getTaskModel(intval($repid));
     }
 
     static public function processNameList()

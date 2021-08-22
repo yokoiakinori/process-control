@@ -69,6 +69,7 @@ class JobDao
     {
         $sql = "SELECT ";
         $sql .= "job.id";
+        $sql .= ", job.id";
         $sql .= ", job.name";
         $sql .= ", job.overview";
         $sql .= ", job.dead_line";
@@ -77,6 +78,7 @@ class JobDao
         $sql .= ", job.createdat";
         $sql .= ", process.process_id";
         $sql .= ", process.start_time";
+        $sql .= ", process.end_time";
         $sql .= " FROM ";
         $sql .= "`job` ";
         $sql .= "LEFT JOIN ";
