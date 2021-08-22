@@ -97,7 +97,7 @@ class ProcessDao
     {
         $sql = "DELETE ";
         $sql .= "FROM ";
-        $sql .= "`job` ";
+        $sql .= "`process` ";
         $sql .= "WHERE `id` = :id ";
 
         $arr = array();

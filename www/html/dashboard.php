@@ -23,6 +23,11 @@ try{
     if( !empty($_POST['process_edit']) ) {
         ProcessController::ProcessEdit();
     }
+
+    if( !empty($_GET['btn_processRemove']) ) {
+        ProcessController::processDelete(intval($_GET['btn_processRemove']));
+        header('Location: /');
+    }
 }catch(\Exception $e){
     Template::exception($e);
 }finally{

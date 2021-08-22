@@ -78,6 +78,13 @@ class ProcessController
         header('Location: /dashboard.php');
     }
 
+    static public function processDelete($jobid)
+    {
+        Db::transaction();
+        ProcessDao::delete($jobid);
+        Db::commit();
+    }
+
     static public function processNameList()
     {
         return ProcessDao::getProcessNameDao();

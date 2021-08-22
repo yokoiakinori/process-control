@@ -49,74 +49,84 @@
                 {foreach $taskItem as $currentProcess}
                 {if isset($currentProcess['process_id'])}
                   {if !$currentProcess['end_time']==null}
-                    <div class="card-body">
-                      <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
-                      <p class="card-text">
-                      開始:{$currentProcess['start_time']}
-                      </p>
-                      <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
-                         工程入力の修正
-                      </button>
-                      <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
-                        <div class="modal-dialog" role="document">
-                          <div class="modal-content">
-                            <div class="modal-header">
-                              <h4 class="modal-title">入力工程の時間修正</h4>
+                    <div class="card card-primary card-outline">
+                      <div class="card-header">
+                        <h6 class="card-title">{$processList[$currentProcess['process_id']-1]["name"]}</h6>
+                        <div class="card-tools">
+                          <form method="GET" action="" onSubmit="return check()">
+                            <button type="submit" class="btn btn-tool"  name="btn_processRemove" value="{$currentProcess['process_id']}"><i class="fas fa-times"></i>
+                            </button>
+                          </form>
+                        </div>
+                      </div>
+                      <div class="card-body">
+                        <p class="card-text">
+                        開始:{$currentProcess['start_time']}
+                        </p>
+                        <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
+                           工程入力の修正
+                        </button>
+                        <div class="modal fade" id="modal-default" tabindex="-1" role="dialog" aria-labelledby="myModalLabel">
+                          <div class="modal-dialog" role="document">
+                            <div class="modal-content">
+                              <div class="modal-header">
+                                <h4 class="modal-title">入力工程の時間修正</h4>
+                              </div>
+                              {form method="post"}
+                                <div class="modal-body">
+                                  <label for="process_start">開始時間</label>
+                                  <div
+                                    class="input-group date"
+                                    id="reservationdatetime_start"
+                                    data-target-input="nearest"
+                                  >
+                                    <input
+                                      type="text"
+                                      class="form-control datetimepicker-input"
+                                      name="start_time"
+                                      value="{$currentProcess['start_time']}"
+                                      data-target="#reservationdatetime_start"
+                                    />
+                                    <div
+                                      class="input-group-append"
+                                      data-target="#reservationdatetime_start"
+                                      data-toggle="datetimepicker"
+                                    >
+                                      <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                  <label for="process_end">終了時間</label>
+                                  <div
+                                    class="input-group date"
+                                    id="reservationdatetime_end"
+                                    data-target-input="nearest"
+                                  >
+                                    <input
+                                      type="text"
+                                      class="form-control datetimepicker-input"
+                                      name="end_time"
+                                      value="{$currentProcess['end_time']}"
+                                      data-target="#reservationdatetime_end"
+                                    />
+                                    <div
+                                      class="input-group-append"
+                                      data-target="#reservationdatetime_end"
+                                      data-toggle="datetimepicker"
+                                    >
+                                      <div class="input-group-text">
+                                        <i class="fa fa-calendar"></i>
+                                      </div>
+                                    </div>
+                                  </div>
+                                </div>
+                                <div class="modal-footer">
+                                  <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
+                                  <button type="submit" name="process_edit" value="{$currentProcess['process_id']}" class="btn btn-primary">送信</button>
+                                </div>
+                              {/form}
                             </div>
-                            {form method="post"}
-                              <div class="modal-body">
-                                <label for="process_start">開始時間</label>
-                                <div
-                                  class="input-group date"
-                                  id="reservationdatetime_start"
-                                  data-target-input="nearest"
-                                >
-                                  <input
-                                    type="text"
-                                    class="form-control datetimepicker-input"
-                                    name="start_time"
-                                    value="{$currentProcess['start_time']}"
-                                    data-target="#reservationdatetime_start"
-                                  />
-                                  <div
-                                    class="input-group-append"
-                                    data-target="#reservationdatetime_start"
-                                    data-toggle="datetimepicker"
-                                  >
-                                    <div class="input-group-text">
-                                      <i class="fa fa-calendar"></i>
-                                    </div>
-                                  </div>
-                                </div>
-                                <label for="process_end">終了時間</label>
-                                <div
-                                  class="input-group date"
-                                  id="reservationdatetime_end"
-                                  data-target-input="nearest"
-                                >
-                                  <input
-                                    type="text"
-                                    class="form-control datetimepicker-input"
-                                    name="end_time"
-                                    value="{$currentProcess['end_time']}"
-                                    data-target="#reservationdatetime_end"
-                                  />
-                                  <div
-                                    class="input-group-append"
-                                    data-target="#reservationdatetime_end"
-                                    data-toggle="datetimepicker"
-                                  >
-                                    <div class="input-group-text">
-                                      <i class="fa fa-calendar"></i>
-                                    </div>
-                                  </div>
-                                </div>
-                              </div>
-                              <div class="modal-footer">
-                                <button type="button" class="btn btn-default" data-dismiss="modal">キャンセル</button>
-                                <button type="submit" name="process_edit" value="{$currentProcess['process_id']}" class="btn btn-primary">送信</button>
-                              </div>
-                            {/form}
                           </div>
                         </div>
                       </div>
