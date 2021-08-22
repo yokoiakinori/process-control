@@ -55,25 +55,27 @@ class ProcessController
         header('Location: /dashboard.php');
     }
 
-    static public function jobList()
+    static public function ProcessEdit()
     {
-        $objModel = new JobModel();
-        return $objModel->getModel();
-    }
+        if(!filter_input_array(INPUT_POST)){
+            return;
+        }
 
-    static public function jobDelete($jobid)
-    {
+        Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
+
+        $insertObj = [
+            "id" => filter_input(INPUT_POST,'process_edit'),
+            "start_time" => filter_input(INPUT_POST,'start_time'),
+            "end_time" => filter_input(INPUT_POST,'end_time'),
+        ];
+        if($insertObj["id"] == ''){
+            return;
+        }
+
         Db::transaction();
-        ProcessDao::delete($jobid);
+        ProcessDao::edit($insertObj);
         Db::commit();
-    }
-
-    static public function taskList()
-    {
-        $objModel = new JobModel();
-        $loginUser=LoginController::getLoginUser();
-        $repid=$loginUser->getId();
-        return $objModel->getTaskModel(intval($repid));
+        header('Location: /dashboard.php');
     }
 
     static public function processNameList()

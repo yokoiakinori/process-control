@@ -76,6 +76,23 @@ class ProcessDao
         return Db::update($sql,$arr);
     }
 
+    public static function edit($objJobModel)
+    {
+        $sql = "UPDATE ";
+        $sql .= "`process` ";
+        $sql .= "SET ";
+        $sql .= "`start_time` = :start_time ";
+        $sql .= ", `end_time` = :end_time ";
+        $sql .= "WHERE `id` = :id ";
+
+        $arr = array();
+        $arr[':id'] = $objJobModel["id"];
+        $arr[':start_time'] = $objJobModel["start_time"];
+        $arr[':end_time'] = $objJobModel["end_time"];
+
+        return Db::update($sql,$arr);
+    }
+
     public static function delete($id)
     {
         $sql = "DELETE ";

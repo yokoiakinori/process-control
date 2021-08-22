@@ -65,7 +65,7 @@
                             </div>
                             {form method="post"}
                               <div class="modal-body">
-                                <label for="jobdeadline">開始時間</label>
+                                <label for="process_start">開始時間</label>
                                 <div
                                   class="input-group date"
                                   id="reservationdatetime_start"
@@ -88,7 +88,7 @@
                                     </div>
                                   </div>
                                 </div>
-                                <label for="jobdeadline">終了時間</label>
+                                <label for="process_end">終了時間</label>
                                 <div
                                   class="input-group date"
                                   id="reservationdatetime_end"
