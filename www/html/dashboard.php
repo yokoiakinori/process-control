@@ -33,6 +33,7 @@ try{
 }finally{
     $loginUser = LoginController::getLoginUser();
     Template::assign("name",$loginUser->getName());
+    Template::assign("page_title","タスク一覧");
     Template::display();
 }
 ?>

@@ -19,6 +19,7 @@ try{
 }finally{
     $loginUser = LoginController::getLoginUser();
     Template::assign("name",$loginUser->getName());
+    Template::assign("page_title","ジョブ作成");
     Template::display();
 }
 

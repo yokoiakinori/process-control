@@ -23,7 +23,7 @@
           />
         </div>
         <div class="info">
-          <a href="#" class="d-block">Alexander Pierce</a>
+          <a href="#" class="d-block">{$name}</a>
         </div>
       </div>
 
@@ -41,7 +41,7 @@
             <a href="#" class="nav-link active">
               <i class="nav-icon fas fa-tachometer-alt"></i>
               <p>
-                ジョブ一覧
+                {$page_title}
                 <i class="right fas fa-angle-left"></i>
               </p>
             </a>
