@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-22 21:04:59
+/* Smarty version 3.1.39, created on 2021-08-22 22:17:11
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61223d6b49b775_30959118',
+  'unifunc' => 'content_61224e57b47551_63066626',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1629633893,
+      1 => 1629633980,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_61223d6b49b775_30959118 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61224e57b47551_63066626 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_113590052761223d6b447fb8_55215142', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_124068003361224e57ab86b9_18015742', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_67827640861223d6b44c624_84200651', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_200725862661224e57ac19a1_00034584', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_214216338761223d6b49af22_39439104', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_60354176561224e57b46c97_91880342', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_113590052761223d6b447fb8_55215142 extends Smarty_Internal_Block
+class Block_124068003361224e57ab86b9_18015742 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_113590052761223d6b447fb8_55215142',
+    0 => 'Block_124068003361224e57ab86b9_18015742',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_67827640861223d6b44c624_84200651 extends Smarty_Internal_Block
+class Block_200725862661224e57ac19a1_00034584 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_67827640861223d6b44c624_84200651',
+    0 => 'Block_200725862661224e57ac19a1_00034584',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -138,7 +138,8 @@ $_smarty_tpl->tpl_vars['currentProcess']->do_else = false;
 </h6>
                         <div class="card-tools">
                           <form method="GET" action="" onSubmit="return check()">
-                            <button type="submit" class="btn btn-tool"  name="btn_processRemove"><i class="fas fa-times"></i>
+                            <button type="submit" class="btn btn-tool"  name="btn_processRemove" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['process_id'], ENT_QUOTES, 'UTF-8');?>
+"><i class="fas fa-times"></i>
                             </button>
                           </form>
                         </div>
@@ -327,12 +328,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_214216338761223d6b49af22_39439104 extends Smarty_Internal_Block
+class Block_60354176561224e57b46c97_91880342 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_214216338761223d6b49af22_39439104',
+    0 => 'Block_60354176561224e57b46c97_91880342',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
