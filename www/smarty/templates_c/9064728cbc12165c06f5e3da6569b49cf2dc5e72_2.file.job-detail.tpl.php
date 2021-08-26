@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-12 22:53:06
+/* Smarty version 3.1.39, created on 2021-08-24 23:17:42
   from '/var/www/smarty/templates/job-detail.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_611527c2d1a098_26792616',
+  'unifunc' => 'content_6124ff86ea9642_24399936',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '9064728cbc12165c06f5e3da6569b49cf2dc5e72' => 
     array (
       0 => '/var/www/smarty/templates/job-detail.tpl',
-      1 => 1628775863,
+      1 => 1629814393,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_611527c2d1a098_26792616 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6124ff86ea9642_24399936 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1046176913611527c2ccd897_07247990', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15870455006124ff86e52973_40300722', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1094875455611527c2cd32b0_58954864', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6711200686124ff86e597e0_07244985', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_945547677611527c2d19604_27280282', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_21346784426124ff86ea8d77_35637754', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1046176913611527c2ccd897_07247990 extends Smarty_Internal_Block
+class Block_15870455006124ff86e52973_40300722 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1046176913611527c2ccd897_07247990',
+    0 => 'Block_15870455006124ff86e52973_40300722',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_1094875455611527c2cd32b0_58954864 extends Smarty_Internal_Block
+class Block_6711200686124ff86e597e0_07244985 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1094875455611527c2cd32b0_58954864',
+    0 => 'Block_6711200686124ff86e597e0_07244985',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -77,13 +77,15 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ジョブ詳細</h1>
+            <h1 class="m-0 text-dark"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_title']->value, ENT_QUOTES, 'UTF-8');?>
+</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
               <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">ジョブ詳細</li>
+              <li class="breadcrumb-item active"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_title']->value, ENT_QUOTES, 'UTF-8');?>
+</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -162,12 +164,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_945547677611527c2d19604_27280282 extends Smarty_Internal_Block
+class Block_21346784426124ff86ea8d77_35637754 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_945547677611527c2d19604_27280282',
+    0 => 'Block_21346784426124ff86ea8d77_35637754',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

@@ -40,7 +40,7 @@
             <!-- /.card -->
             <div class="card card-primary">
               <div class="card-header">
-                <h3 class="card-title">ジョブ作成フォーム</h3>
+                <h3 class="card-title">ジョブ照会フォーム</h3>
               </div>
               {form method="post"}
                 <div class="card-body">

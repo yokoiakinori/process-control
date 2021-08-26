@@ -94,6 +94,23 @@ class JobDao
         return Db::groupselect($sql,$arr);
     }
 
+    public static function referenceJobDao()
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= ", `overview`";
+        $sql .= ", `dead_line`";
+        $sql .= ", `rep_id`";
+        $sql .= ", `is_finished`";
+        $sql .= ", `createdat`";
+        $sql .= " FROM ";
+        $sql .= " `job` ";
+
+
+        return Db::all($sql);
+    }
+
     public static function getClientDao()
     {
         $sql = "SELECT ";

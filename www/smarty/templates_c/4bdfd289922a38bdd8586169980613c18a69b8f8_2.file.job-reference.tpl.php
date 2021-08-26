@@ -1,9 +1,75 @@
-{block name='meta'}
+<?php
+/* Smarty version 3.1.39, created on 2021-08-25 21:02:14
+  from '/var/www/smarty/templates/job-reference.tpl' */
+
+/* @var Smarty_Internal_Template $_smarty_tpl */
+if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
+  'version' => '3.1.39',
+  'unifunc' => 'content_612631465c09d1_41052903',
+  'has_nocache_code' => false,
+  'file_dependency' => 
+  array (
+    '4bdfd289922a38bdd8586169980613c18a69b8f8' => 
+    array (
+      0 => '/var/www/smarty/templates/job-reference.tpl',
+      1 => 1629814654,
+      2 => 'file',
+    ),
+  ),
+  'includes' => 
+  array (
+    'file:common/nav.tpl' => 1,
+    'file:common/sidebar.tpl' => 1,
+  ),
+),false)) {
+function content_612631465c09d1_41052903 (Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_loadInheritance();
+$_smarty_tpl->inheritance->init($_smarty_tpl, false);
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_82770390761263146500713_81876663', 'meta');
+?>
+ <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_6122377366126314650d4f7_11822337', 'content');
+?>
+ <?php 
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1462793045612631465bfe38_61421957', 'script');
+?>
+
+<?php }
+/* {block 'meta'} */
+class Block_82770390761263146500713_81876663 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'meta' => 
+  array (
+    0 => 'Block_82770390761263146500713_81876663',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+
 <title>新規ジョブ作成</title>
-{/block} {block name='content'}
+<?php
+}
+}
+/* {/block 'meta'} */
+/* {block 'content'} */
+class Block_6122377366126314650d4f7_11822337 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'content' => 
+  array (
+    0 => 'Block_6122377366126314650d4f7_11822337',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+$_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/block.form.php','function'=>'smarty_block_form',),));
+?>
+
 <div class="wrapper">
-  {include file="common/nav.tpl"}
-  {include file="common/sidebar.tpl"}
+  <?php $_smarty_tpl->_subTemplateRender("file:common/nav.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
+  <?php $_smarty_tpl->_subTemplateRender("file:common/sidebar.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
+?>
 
   <!-- Content Wrapper. Contains page content -->
   <div class="content-wrapper">
@@ -12,7 +78,8 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">{$page_title}</h1>
+            <h1 class="m-0 text-dark"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_title']->value, ENT_QUOTES, 'UTF-8');?>
+</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
@@ -21,7 +88,8 @@
               <li class="breadcrumb-item">
                 <a href="job-list.php">ジョブ一覧</a>
               </li>
-              <li class="breadcrumb-item active">{$page_title}</li>
+              <li class="breadcrumb-item active"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_title']->value, ENT_QUOTES, 'UTF-8');?>
+</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -42,7 +110,11 @@
               <div class="card-header">
                 <h3 class="card-title">ジョブ作成フォーム</h3>
               </div>
-              {form method="post"}
+              <?php $_smarty_tpl->smarty->_cache['_tag_stack'][] = array('form', array('method'=>"post"));
+$_block_repeat=true;
+echo smarty_block_form(array('method'=>"post"), null, $_smarty_tpl, $_block_repeat);
+while ($_block_repeat) {
+ob_start();?>
                 <div class="card-body">
                   <div class="form-group">
                     <label for="jobtitle">ジョブ名</label>
@@ -56,9 +128,18 @@
                   <div class="form-group">
                   <label for="jobrep">クライアント</label>
                   <select name="client_id" class="form-control">
-                  {foreach $clientList as $client}
-                    <option value="{$client["id"]}">{$client["name"]}</option>
-                  {/foreach}
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['clientList']->value, 'client');
+$_smarty_tpl->tpl_vars['client']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['client']->value) {
+$_smarty_tpl->tpl_vars['client']->do_else = false;
+?>
+                    <option value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['client']->value["id"], ENT_QUOTES, 'UTF-8');?>
+"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['client']->value["name"], ENT_QUOTES, 'UTF-8');?>
+</option>
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </select>
                   </div>
                   <div class="form-group">
@@ -107,7 +188,10 @@
                 <div class="card-footer">
                   <button type="submit" class="btn btn-primary">送信</button>
                 </div>
-              {/form}
+              <?php $_block_repeat=false;
+echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_block_repeat);
+}
+array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
             </div>
           </div>
           <!-- /.col-md-6 -->
@@ -144,4 +228,23 @@
     All rights reserved.
   </footer>
 </div>
-{/block} {block name='script'} {/block}
+<?php
+}
+}
+/* {/block 'content'} */
+/* {block 'script'} */
+class Block_1462793045612631465bfe38_61421957 extends Smarty_Internal_Block
+{
+public $subBlocks = array (
+  'script' => 
+  array (
+    0 => 'Block_1462793045612631465bfe38_61421957',
+  ),
+);
+public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
+?>
+ <?php
+}
+}
+/* {/block 'script'} */
+}

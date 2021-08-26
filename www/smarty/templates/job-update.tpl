@@ -12,7 +12,7 @@
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">ジョブ編集</h1>
+            <h1 class="m-0 text-dark">{$page_title}</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
@@ -21,7 +21,7 @@
               <li class="breadcrumb-item">
                 <a href="job-list.php">ジョブ一覧</a>
               </li>
-              <li class="breadcrumb-item active">ジョブ編集</li>
+              <li class="breadcrumb-item active">{$page_title}</li>
             </ol>
           </div>
           <!-- /.col -->
