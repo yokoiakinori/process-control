@@ -94,7 +94,7 @@ class JobDao
         return Db::groupselect($sql,$arr);
     }
 
-    public static function referenceJobDao()
+    public static function referenceJobDao($referenceObj)
     {
         $sql = "SELECT ";
         $sql .= "`id`";
@@ -106,9 +106,24 @@ class JobDao
         $sql .= ", `createdat`";
         $sql .= " FROM ";
         $sql .= " `job` ";
+        $sql .= "WHERE `name` = ";
+        $sql .= "CASE WHEN :name = '' THEN `name` ELSE :name END ";
+        $sql .= "AND `client_id` = ";
+        $sql .= "CASE WHEN :client_id IS NULL THEN `client_id` ELSE :client_id END ";
+        $sql .= "AND `overview` = ";
+        $sql .= "CASE WHEN :overview = '' THEN :overview ELSE `overview` END ";
+        $sql .= "AND `quantity` = ";
+        $sql .= "CASE WHEN :quantity IS NULL THEN `quantity` ELSE :quantity END ";
+        $sql .= "AND `dead_line` = ";
+        $sql .= "CASE WHEN :dead_line = '' `dead_line` ELSE :dead_line END";
 
-
-        return Db::all($sql);
+        $arr = array();
+        $arr[':name'] = $referenceObj["name"];
+        $arr[':overview'] = $referenceObj["overview"];
+        $arr[':client_id'] = $referenceObj["client_id"];
+        $arr[':quantity'] = $referenceObj["quantity"];
+        $arr[':dead_line'] = $referenceObj["dead_line"];
+        return Db::select($sql,$arr);
     }
 
     public static function getClientDao()

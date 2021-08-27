@@ -15,6 +15,9 @@ try{
         LoginController::logout();
     }
 
+    $jobList = JobController::jobReference();
+    var_dump($jobList);
+
 }catch(\Exception $e){
     Template::exception($e);
 }finally{
