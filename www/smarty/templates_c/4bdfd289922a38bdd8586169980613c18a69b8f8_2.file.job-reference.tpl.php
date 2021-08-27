@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-26 23:10:02
+/* Smarty version 3.1.39, created on 2021-08-27 21:47:46
   from '/var/www/smarty/templates/job-reference.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6127a0ba7c3344_69490269',
+  'unifunc' => 'content_6128def2ccfb11_76134244',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '4bdfd289922a38bdd8586169980613c18a69b8f8' => 
     array (
       0 => '/var/www/smarty/templates/job-reference.tpl',
-      1 => 1629986150,
+      1 => 1630068427,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_6127a0ba7c3344_69490269 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6128def2ccfb11_76134244 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_16266430026127a0ba737972_38095514', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_9951144246128def2c483b8_90149387', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_7632684656127a0ba743922_44268799', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_15887640206128def2c4f950_84502965', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2212896606127a0ba7c2a61_83270221', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_702266036128def2ccf222_77991676', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_16266430026127a0ba737972_38095514 extends Smarty_Internal_Block
+class Block_9951144246128def2c483b8_90149387 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_16266430026127a0ba737972_38095514',
+    0 => 'Block_9951144246128def2c483b8_90149387',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_7632684656127a0ba743922_44268799 extends Smarty_Internal_Block
+class Block_15887640206128def2c4f950_84502965 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_7632684656127a0ba743922_44268799',
+    0 => 'Block_15887640206128def2c4f950_84502965',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -194,6 +194,45 @@ echo smarty_block_form(array('method'=>"post"), ob_get_clean(), $_smarty_tpl, $_
 array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
             </div>
           </div>
+          <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['jobList']->value, 'jobItem');
+$_smarty_tpl->tpl_vars['jobItem']->index = -1;
+$_smarty_tpl->tpl_vars['jobItem']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['jobItem']->value) {
+$_smarty_tpl->tpl_vars['jobItem']->do_else = false;
+$_smarty_tpl->tpl_vars['jobItem']->index++;
+$__foreach_jobItem_1_saved = $_smarty_tpl->tpl_vars['jobItem'];
+?>
+          <div class="col-lg-6">
+            <div class="card card-primary card-outline">
+              <div class="card-header">
+                <h3 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['name'], ENT_QUOTES, 'UTF-8');?>
+</h3>
+                <div class="card-tools">
+                  <form method="GET" action="" onSubmit="return check()">
+                    <button type="submit" class="btn btn-tool"  name="btn_jobRemove" value="<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['id'], ENT_QUOTES, 'UTF-8');?>
+"><i class="fas fa-times"></i>
+                    </button>
+                  </form>
+                </div>
+              </div>
+              <div class="card-body">
+                <h6 class="card-title"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['overview'], ENT_QUOTES, 'UTF-8');?>
+</h6>
+
+                <p class="card-text">
+                  納期:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->value['dead_line'], ENT_QUOTES, 'UTF-8');?>
+
+                </p>
+                <a href="/job-detail.php?job=<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['jobItem']->index, ENT_QUOTES, 'UTF-8');?>
+" class="btn btn-primary">詳細確認</a>
+              </div>
+            </div>
+          </div>
+          <?php
+$_smarty_tpl->tpl_vars['jobItem'] = $__foreach_jobItem_1_saved;
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
           <!-- /.col-md-6 -->
           <div class="col-lg-6"></div>
           <!-- /.col-md-6 -->
@@ -233,12 +272,12 @@ array_pop($_smarty_tpl->smarty->_cache['_tag_stack']);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_2212896606127a0ba7c2a61_83270221 extends Smarty_Internal_Block
+class Block_702266036128def2ccf222_77991676 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_2212896606127a0ba7c2a61_83270221',
+    0 => 'Block_702266036128def2ccf222_77991676',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

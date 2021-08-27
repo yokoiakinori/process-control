@@ -111,11 +111,11 @@ class JobDao
         $sql .= "AND `client_id` = ";
         $sql .= "CASE WHEN :client_id IS NULL THEN `client_id` ELSE :client_id END ";
         $sql .= "AND `overview` = ";
-        $sql .= "CASE WHEN :overview = '' THEN :overview ELSE `overview` END ";
+        $sql .= "CASE WHEN :overview = '' THEN `overview` ELSE :overview END ";
         $sql .= "AND `quantity` = ";
         $sql .= "CASE WHEN :quantity IS NULL THEN `quantity` ELSE :quantity END ";
         $sql .= "AND `dead_line` = ";
-        $sql .= "CASE WHEN :dead_line = '' `dead_line` ELSE :dead_line END";
+        $sql .= "CASE WHEN :dead_line = '' THEN `dead_line` ELSE :dead_line END";
 
         $arr = array();
         $arr[':name'] = $referenceObj["name"];
