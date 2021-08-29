@@ -14,6 +14,9 @@
         <a href="job-list.php" class="nav-link">ジョブ一覧</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
+        <a href="job-reference.php" class="nav-link">ジョブ照会</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
         <form method="get" action="" class="nav">
           <button type="submit" name="btn_logout" value="ログアウト" class="btn btn-block btn-default btn-sm">ログアウト</button>
         </form>

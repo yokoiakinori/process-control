@@ -94,6 +94,40 @@ class JobDao
         return Db::groupselect($sql,$arr);
     }
 
+    public static function referenceJobDao($referenceObj)
+    {
+        $sql = "SELECT ";
+        $sql .= "`id`";
+        $sql .= ", `name`";
+        $sql .= ", `overview`";
+        $sql .= ", `dead_line`";
+        $sql .= ", `rep_id`";
+        $sql .= ", `is_finished`";
+        $sql .= ", `createdat`";
+        $sql .= " FROM ";
+        $sql .= " `job` ";
+        $sql .= "WHERE `name` LIKE CONCAT('%', ";
+        $sql .= "CASE WHEN :name = '' THEN `name` ELSE :name END ";
+        $sql .= ",'%') ";
+        $sql .= "AND `client_id` = ";
+        $sql .= "CASE WHEN :client_id IS NULL THEN `client_id` ELSE :client_id END ";
+        $sql .= "AND `overview` LIKE CONCAT('%', ";
+        $sql .= "CASE WHEN :overview = '' THEN `overview` ELSE :overview END ";
+        $sql .= ",'%') ";
+        $sql .= "AND `quantity` = ";
+        $sql .= "CASE WHEN :quantity IS NULL THEN `quantity` ELSE :quantity END ";
+        $sql .= "AND `dead_line` = ";
+        $sql .= "CASE WHEN :dead_line = '' THEN `dead_line` ELSE :dead_line END";
+
+        $arr = array();
+        $arr[':name'] = $referenceObj["name"];
+        $arr[':overview'] = $referenceObj["overview"];
+        $arr[':client_id'] = $referenceObj["client_id"];
+        $arr[':quantity'] = $referenceObj["quantity"];
+        $arr[':dead_line'] = $referenceObj["dead_line"];
+        return Db::select($sql,$arr);
+    }
+
     public static function getClientDao()
     {
         $sql = "SELECT ";

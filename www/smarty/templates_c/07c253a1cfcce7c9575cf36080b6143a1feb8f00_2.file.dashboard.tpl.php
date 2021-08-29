@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-22 22:17:11
+/* Smarty version 3.1.39, created on 2021-08-24 23:17:46
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61224e57b47551_63066626',
+  'unifunc' => 'content_6124ff8a64b772_95690518',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1629633980,
+      1 => 1629814466,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_61224e57b47551_63066626 (Smarty_Internal_Template $_smarty_tpl) {
+function content_6124ff8a64b772_95690518 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_124068003361224e57ab86b9_18015742', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13422664566124ff8a55b940_66395467', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_200725862661224e57ac19a1_00034584', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19228359246124ff8a561a06_41515258', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_60354176561224e57b46c97_91880342', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_903118676124ff8a64a093_09716058', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_124068003361224e57ab86b9_18015742 extends Smarty_Internal_Block
+class Block_13422664566124ff8a55b940_66395467 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_124068003361224e57ab86b9_18015742',
+    0 => 'Block_13422664566124ff8a55b940_66395467',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_200725862661224e57ac19a1_00034584 extends Smarty_Internal_Block
+class Block_19228359246124ff8a561a06_41515258 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_200725862661224e57ac19a1_00034584',
+    0 => 'Block_19228359246124ff8a561a06_41515258',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -78,13 +78,13 @@ $_smarty_tpl->_checkPlugins(array(0=>array('file'=>'/var/www/smarty/plugins/bloc
       <div class="container-fluid">
         <div class="row mb-2">
           <div class="col-sm-6">
-            <h1 class="m-0 text-dark">タスク一覧</h1>
+            <h1 class="m-0 text-dark"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['page_title']->value, ENT_QUOTES, 'UTF-8');?>
+</h1>
           </div>
           <!-- /.col -->
           <div class="col-sm-6">
             <ol class="breadcrumb float-sm-right">
-              <li class="breadcrumb-item"><a href="#">Home</a></li>
-              <li class="breadcrumb-item active">Starter Page</li>
+              <li class="breadcrumb-item active">Home</li>
             </ol>
           </div>
           <!-- /.col -->
@@ -328,12 +328,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_60354176561224e57b46c97_91880342 extends Smarty_Internal_Block
+class Block_903118676124ff8a64a093_09716058 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_60354176561224e57b46c97_91880342',
+    0 => 'Block_903118676124ff8a64a093_09716058',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

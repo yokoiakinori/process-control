@@ -75,6 +75,25 @@ class JobController
         Db::commit();
     }
 
+    static public function jobReference()
+    {
+        if(!filter_input_array(INPUT_POST)){
+            return;
+        }
+
+        Csrf::check(filter_input(INPUT_POST, 'csrf_token'));
+
+        $referenceObj = [
+            "name" => filter_input(INPUT_POST,'name'),
+            "overview" => filter_input(INPUT_POST,'overview'),
+            "dead_line" => filter_input(INPUT_POST,'dead_line'),
+            "client_id" => filter_input(INPUT_POST,'client_id'),
+            "quantity" => filter_input(INPUT_POST,'quantity'),
+        ];
+
+        return JobDao::referenceJobDao($referenceObj);
+    }
+
     static public function taskList()
     {
         $objModel = new JobModel();
