@@ -16,7 +16,6 @@ try{
     }
 
     $jobList = JobController::jobReference();
-    var_dump($jobList);
     Template::assign("jobList",$jobList);
 
 }catch(\Exception $e){
