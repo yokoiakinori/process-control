@@ -15,6 +15,8 @@ try{
         LoginController::logout();
     }
 
+    $clientList = JobController::clientList();
+    Template::assign("clientList",$clientList);
     $jobList = JobController::jobReference();
     Template::assign("jobList",$jobList);
 
