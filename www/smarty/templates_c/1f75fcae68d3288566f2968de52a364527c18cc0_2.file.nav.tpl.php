@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-25 18:55:17
+/* Smarty version 3.1.39, created on 2021-08-31 21:40:37
   from '/var/www/smarty/templates/common/nav.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61261385effe80_83679669',
+  'unifunc' => 'content_612e2345572b39_74015555',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '1f75fcae68d3288566f2968de52a364527c18cc0' => 
     array (
       0 => '/var/www/smarty/templates/common/nav.tpl',
-      1 => 1629885313,
+      1 => 1630413470,
       2 => 'file',
     ),
   ),
@@ -20,7 +20,7 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
   ),
 ),false)) {
-function content_61261385effe80_83679669 (Smarty_Internal_Template $_smarty_tpl) {
+function content_612e2345572b39_74015555 (Smarty_Internal_Template $_smarty_tpl) {
 ?><!-- Navbar -->
   <nav class="main-header navbar navbar-expand navbar-white navbar-light">
     <!-- Left navbar links -->
@@ -38,6 +38,9 @@ function content_61261385effe80_83679669 (Smarty_Internal_Template $_smarty_tpl)
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <a href="job-reference.php" class="nav-link">ジョブ照会</a>
+      </li>
+      <li class="nav-item d-none d-sm-inline-block">
+        <a href="insights.php" class="nav-link">インサイト</a>
       </li>
       <li class="nav-item d-none d-sm-inline-block">
         <form method="get" action="" class="nav">
