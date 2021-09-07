@@ -4,6 +4,7 @@ namespace ProcessControl;
 use ProcessControl\common\Template;
 use ProcessControl\controller\LoginController;
 use ProcessControl\controller\JobController;
+use ProcessControl\controller\ProcessController;
 
 define('LAYOUT','main');
 try{
@@ -15,8 +16,11 @@ try{
         LoginController::logout();
     }
 
-    $jobList = JobController::jobReference();
-    Template::assign("jobList",$jobList);
+    $taskList = JobController::taskList();
+    Template::assign("taskList",$taskList);
+    $processList = ProcessController::processNameList();
+    Template::assign("processList",$processList);
+    var_dump(thisWeekReturn());
 
 }catch(\Exception $e){
     Template::exception($e);
@@ -30,5 +34,17 @@ try{
 function logout()
 {
     LoginController::logout();
+}
+
+function thisWeekReturn()
+{
+    $today = date("d");
+    $weekdayNumber = date("w");
+    $weekStart = date("d",mktime(0,0,0,0,$today-$weekdayNumber,0));
+    $thisWeek=array();
+    for ($i = 0; $i < 7; $i++) {
+         $thisWeek[]=date("d",mktime(0,0,0,0,$weekStart+$i,0));
+    }
+    return $thisWeek;
 }
 ?>

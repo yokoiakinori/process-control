@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-31 21:41:09
+/* Smarty version 3.1.39, created on 2021-09-05 10:28:18
   from '/var/www/smarty/templates/insights.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_612e23654bd520_62602529',
+  'unifunc' => 'content_61341d320a6c75_07136802',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25f25d8d39d9aaae3d4cb004a126768b08e4844c' => 
     array (
       0 => '/var/www/smarty/templates/insights.tpl',
-      1 => 1630413663,
+      1 => 1630805292,
       2 => 'file',
     ),
   ),
@@ -20,30 +20,28 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:common/nav.tpl' => 1,
     'file:common/sidebar.tpl' => 1,
-    'file:part/job-form.tpl' => 1,
-    'file:part/job-list.tpl' => 1,
   ),
 ),false)) {
-function content_612e23654bd520_62602529 (Smarty_Internal_Template $_smarty_tpl) {
+function content_61341d320a6c75_07136802 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_2131572124612e236549e368_66723703', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_35963777361341d3208fe92_53175203', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_859423600612e23654a6095_87612945', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_168389210161341d32094a83_33281597', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1965209934612e23654bcb50_56630513', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64431667661341d320a5b11_00761821', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_2131572124612e236549e368_66723703 extends Smarty_Internal_Block
+class Block_35963777361341d3208fe92_53175203 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_2131572124612e236549e368_66723703',
+    0 => 'Block_35963777361341d3208fe92_53175203',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -55,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_859423600612e23654a6095_87612945 extends Smarty_Internal_Block
+class Block_168389210161341d32094a83_33281597 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_859423600612e23654a6095_87612945',
+    0 => 'Block_168389210161341d32094a83_33281597',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -102,12 +100,72 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
-            <?php $_smarty_tpl->_subTemplateRender("file:part/job-form.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">進捗状況</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ジョブ名</th>
+                      <th style="width: 100px">月曜午前</th>
+                      <th style="width: 100px">月曜午後</th>
+                      <th style="width: 100px">火曜午前</th>
+                      <th style="width: 100px">火曜午後</th>
+                      <th style="width: 100px">水曜午前</th>
+                      <th style="width: 100px">水曜午後</th>
+                    </tr>
+                  </thead>
+                  <tbody>
+                    <tr>
+                      <td>1.</td>
+                      <td>Update software</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-danger">55%</span></td>
+                    </tr>
+                    <tr>
+                      <td>2.</td>
+                      <td>Clean database</td>
+                      <td>
+                        <div class="progress progress-xs">
+                          <div class="progress-bar bg-warning" style="width: 70%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-warning">70%</span></td>
+                    </tr>
+                    <tr>
+                      <td>3.</td>
+                      <td>Cron job running</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-primary" style="width: 30%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-primary">30%</span></td>
+                    </tr>
+                    <tr>
+                      <td>4.</td>
+                      <td>Fix and squish bugs</td>
+                      <td>
+                        <div class="progress progress-xs progress-striped active">
+                          <div class="progress-bar bg-success" style="width: 90%"></div>
+                        </div>
+                      </td>
+                      <td><span class="badge bg-success">90%</span></td>
+                    </tr>
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
           </div>
-          <?php $_smarty_tpl->_subTemplateRender("file:part/job-list.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, false);
-?>
           <!-- /.col-md-6 -->
           <div class="col-lg-6"></div>
           <!-- /.col-md-6 -->
@@ -147,12 +205,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1965209934612e23654bcb50_56630513 extends Smarty_Internal_Block
+class Block_64431667661341d320a5b11_00761821 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1965209934612e23654bcb50_56630513',
+    0 => 'Block_64431667661341d320a5b11_00761821',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
