@@ -33,10 +33,43 @@
     <div class="content">
       <div class="container-fluid">
         <div class="row">
-          <div class="col-lg-6">
-            {include file="part/job-form.tpl"}
+          <div class="col-12">
+            <div class="card">
+              <div class="card-header">
+                <h3 class="card-title">進捗状況</h3>
+              </div>
+              <!-- /.card-header -->
+              <div class="card-body p-0">
+                <table class="table table-striped">
+                  <thead>
+                    <tr>
+                      <th>ジョブ名</th>
+                      {foreach $weekList as $day}
+                      <th style="width: 35px; fontsize: 17px">{$day}:AM</th>
+                      <th style="width: 35px; fontsize: 17px">{$day}:PM</th>
+                      {/foreach}
+                    </tr>
+                  </thead>
+                  <tbody>
+                  {foreach $taskList as $taskItem}
+                  <tr>
+                      <td>{$taskItem[0]['name']}</td>
+                      {foreach $weekList as $day}
+                      <td>
+                        {include file="part/insights-process-item.tpl"}
+                      </td>
+                      <td>
+                        {include file="part/insights-process-item.tpl"}
+                      </td>
+                      {/foreach}
+                  </tr>
+                  {/foreach}
+                  </tbody>
+                </table>
+              </div>
+              <!-- /.card-body -->
+            </div>
           </div>
-          {include file="part/job-list.tpl"}
           <!-- /.col-md-6 -->
           <div class="col-lg-6"></div>
           <!-- /.col-md-6 -->
