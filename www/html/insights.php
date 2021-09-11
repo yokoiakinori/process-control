@@ -21,7 +21,6 @@ try{
     $processList = ProcessController::processNameList();
     Template::assign("processList",$processList);
     Template::assign("weekList",thisWeekReturn());
-    var_dump($taskList);
 
 }catch(\Exception $e){
     Template::exception($e);

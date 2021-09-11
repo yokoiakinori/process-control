@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-11 22:32:44
+/* Smarty version 3.1.39, created on 2021-09-11 23:28:16
   from '/var/www/smarty/templates/insights.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613caffc4a3420_95469628',
+  'unifunc' => 'content_613cbd008c51b9_62213137',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25f25d8d39d9aaae3d4cb004a126768b08e4844c' => 
     array (
       0 => '/var/www/smarty/templates/insights.tpl',
-      1 => 1631367161,
+      1 => 1631370493,
       2 => 'file',
     ),
   ),
@@ -23,26 +23,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:part/insights-process-item.tpl' => 2,
   ),
 ),false)) {
-function content_613caffc4a3420_95469628 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613cbd008c51b9_62213137 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_805958017613caffc472f86_26171738', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1630774379613cbd0086ac34_71402667', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1123731114613caffc478d52_97691453', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1901021584613cbd00875427_54140815', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1641702867613caffc4a2b57_82826167', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1186758578613cbd008c4880_67276299', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_805958017613caffc472f86_26171738 extends Smarty_Internal_Block
+class Block_1630774379613cbd0086ac34_71402667 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_805958017613caffc472f86_26171738',
+    0 => 'Block_1630774379613cbd0086ac34_71402667',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_1123731114613caffc478d52_97691453 extends Smarty_Internal_Block
+class Block_1901021584613cbd00875427_54140815 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1123731114613caffc478d52_97691453',
+    0 => 'Block_1901021584613cbd00875427_54140815',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -118,9 +118,9 @@ $_smarty_tpl->tpl_vars['day']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
 $_smarty_tpl->tpl_vars['day']->do_else = false;
 ?>
-                      <th style="width: 35px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
+                      <th style="width: 35px; fontsize: 17px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
 :AM</th>
-                      <th style="width: 35px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
+                      <th style="width: 35px; fontsize: 17px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
 :PM</th>
                       <?php
 }
@@ -203,12 +203,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1641702867613caffc4a2b57_82826167 extends Smarty_Internal_Block
+class Block_1186758578613cbd008c4880_67276299 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1641702867613caffc4a2b57_82826167',
+    0 => 'Block_1186758578613cbd008c4880_67276299',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

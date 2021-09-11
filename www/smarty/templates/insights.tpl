@@ -45,8 +45,8 @@
                     <tr>
                       <th>ジョブ名</th>
                       {foreach $weekList as $day}
-                      <th style="width: 35px">{$day}:AM</th>
-                      <th style="width: 35px">{$day}:PM</th>
+                      <th style="width: 35px; fontsize: 17px">{$day}:AM</th>
+                      <th style="width: 35px; fontsize: 17px">{$day}:PM</th>
                       {/foreach}
                     </tr>
                   </thead>
