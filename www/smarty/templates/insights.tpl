@@ -44,55 +44,26 @@
                   <thead>
                     <tr>
                       <th>ジョブ名</th>
-                      <th style="width: 100px">月曜午前</th>
-                      <th style="width: 100px">月曜午後</th>
-                      <th style="width: 100px">火曜午前</th>
-                      <th style="width: 100px">火曜午後</th>
-                      <th style="width: 100px">水曜午前</th>
-                      <th style="width: 100px">水曜午後</th>
+                      {foreach $weekList as $day}
+                      <th style="width: 35px">{$day}:AM</th>
+                      <th style="width: 35px">{$day}:PM</th>
+                      {/foreach}
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                  {foreach $taskList as $taskItem}
+                  <tr>
+                      <td>{$taskItem[0]['name']}</td>
+                      {foreach $weekList as $day}
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        {include file="part/insights-process-item.tpl"}
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
+                        {include file="part/insights-process-item.tpl"}
                       </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
+                      {/foreach}
+                  </tr>
+                  {/foreach}
                   </tbody>
                 </table>
               </div>

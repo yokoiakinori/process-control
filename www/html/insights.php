@@ -20,7 +20,8 @@ try{
     Template::assign("taskList",$taskList);
     $processList = ProcessController::processNameList();
     Template::assign("processList",$processList);
-    var_dump(thisWeekReturn());
+    Template::assign("weekList",thisWeekReturn());
+    var_dump($taskList);
 
 }catch(\Exception $e){
     Template::exception($e);
@@ -42,8 +43,9 @@ function thisWeekReturn()
     $weekdayNumber = date("w");
     $weekStart = date("d",mktime(0,0,0,0,$today-$weekdayNumber,0));
     $thisWeek=array();
-    for ($i = 0; $i < 7; $i++) {
-         $thisWeek[]=date("d",mktime(0,0,0,0,$weekStart+$i,0));
+    $displayDays=7;
+    for($i=0;$i <$displayDays;$i++){
+        $thisWeek[]=date("Y-m-d",mktime(0,0,0,date("m"),$weekStart+$i,date("Y")));
     }
     return $thisWeek;
 }

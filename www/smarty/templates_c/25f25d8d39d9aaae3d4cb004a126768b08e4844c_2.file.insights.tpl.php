@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-05 10:28:18
+/* Smarty version 3.1.39, created on 2021-09-11 22:32:44
   from '/var/www/smarty/templates/insights.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_61341d320a6c75_07136802',
+  'unifunc' => 'content_613caffc4a3420_95469628',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25f25d8d39d9aaae3d4cb004a126768b08e4844c' => 
     array (
       0 => '/var/www/smarty/templates/insights.tpl',
-      1 => 1630805292,
+      1 => 1631367161,
       2 => 'file',
     ),
   ),
@@ -20,28 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:common/nav.tpl' => 1,
     'file:common/sidebar.tpl' => 1,
+    'file:part/insights-process-item.tpl' => 2,
   ),
 ),false)) {
-function content_61341d320a6c75_07136802 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613caffc4a3420_95469628 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_35963777361341d3208fe92_53175203', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_805958017613caffc472f86_26171738', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_168389210161341d32094a83_33281597', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1123731114613caffc478d52_97691453', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_64431667661341d320a5b11_00761821', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1641702867613caffc4a2b57_82826167', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_35963777361341d3208fe92_53175203 extends Smarty_Internal_Block
+class Block_805958017613caffc472f86_26171738 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_35963777361341d3208fe92_53175203',
+    0 => 'Block_805958017613caffc472f86_26171738',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_168389210161341d32094a83_33281597 extends Smarty_Internal_Block
+class Block_1123731114613caffc478d52_97691453 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_168389210161341d32094a83_33281597',
+    0 => 'Block_1123731114613caffc478d52_97691453',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -111,55 +112,52 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
                   <thead>
                     <tr>
                       <th>ジョブ名</th>
-                      <th style="width: 100px">月曜午前</th>
-                      <th style="width: 100px">月曜午後</th>
-                      <th style="width: 100px">火曜午前</th>
-                      <th style="width: 100px">火曜午後</th>
-                      <th style="width: 100px">水曜午前</th>
-                      <th style="width: 100px">水曜午後</th>
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['weekList']->value, 'day');
+$_smarty_tpl->tpl_vars['day']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
+$_smarty_tpl->tpl_vars['day']->do_else = false;
+?>
+                      <th style="width: 35px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
+:AM</th>
+                      <th style="width: 35px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
+:PM</th>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                     </tr>
                   </thead>
                   <tbody>
-                    <tr>
-                      <td>1.</td>
-                      <td>Update software</td>
+                  <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['taskList']->value, 'taskItem');
+$_smarty_tpl->tpl_vars['taskItem']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['taskItem']->value) {
+$_smarty_tpl->tpl_vars['taskItem']->do_else = false;
+?>
+                  <tr>
+                      <td><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['taskItem']->value[0]['name'], ENT_QUOTES, 'UTF-8');?>
+</td>
+                      <?php
+$_from = $_smarty_tpl->smarty->ext->_foreach->init($_smarty_tpl, $_smarty_tpl->tpl_vars['weekList']->value, 'day');
+$_smarty_tpl->tpl_vars['day']->do_else = true;
+if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
+$_smarty_tpl->tpl_vars['day']->do_else = false;
+?>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar progress-bar-danger" style="width: 55%"></div>
-                        </div>
+                        <?php $_smarty_tpl->_subTemplateRender("file:part/insights-process-item.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
                       </td>
-                      <td><span class="badge bg-danger">55%</span></td>
-                    </tr>
-                    <tr>
-                      <td>2.</td>
-                      <td>Clean database</td>
                       <td>
-                        <div class="progress progress-xs">
-                          <div class="progress-bar bg-warning" style="width: 70%"></div>
-                        </div>
+                        <?php $_smarty_tpl->_subTemplateRender("file:part/insights-process-item.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
+?>
                       </td>
-                      <td><span class="badge bg-warning">70%</span></td>
-                    </tr>
-                    <tr>
-                      <td>3.</td>
-                      <td>Cron job running</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-primary" style="width: 30%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-primary">30%</span></td>
-                    </tr>
-                    <tr>
-                      <td>4.</td>
-                      <td>Fix and squish bugs</td>
-                      <td>
-                        <div class="progress progress-xs progress-striped active">
-                          <div class="progress-bar bg-success" style="width: 90%"></div>
-                        </div>
-                      </td>
-                      <td><span class="badge bg-success">90%</span></td>
-                    </tr>
+                      <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
+                  </tr>
+                  <?php
+}
+$_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
                   </tbody>
                 </table>
               </div>
@@ -205,12 +203,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_64431667661341d320a5b11_00761821 extends Smarty_Internal_Block
+class Block_1641702867613caffc4a2b57_82826167 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_64431667661341d320a5b11_00761821',
+    0 => 'Block_1641702867613caffc4a2b57_82826167',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
