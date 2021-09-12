@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-11 23:28:16
+/* Smarty version 3.1.39, created on 2021-09-12 11:19:43
   from '/var/www/smarty/templates/insights.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613cbd008c51b9_62213137',
+  'unifunc' => 'content_613d63bf310d49_65430800',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25f25d8d39d9aaae3d4cb004a126768b08e4844c' => 
     array (
       0 => '/var/www/smarty/templates/insights.tpl',
-      1 => 1631370493,
+      1 => 1631413180,
       2 => 'file',
     ),
   ),
@@ -20,29 +20,29 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   array (
     'file:common/nav.tpl' => 1,
     'file:common/sidebar.tpl' => 1,
-    'file:part/insights-process-item.tpl' => 2,
+    'file:part/insights-process-item.tpl' => 1,
   ),
 ),false)) {
-function content_613cbd008c51b9_62213137 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613d63bf310d49_65430800 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1630774379613cbd0086ac34_71402667', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1384893148613d63bf2dbe60_61331843', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1901021584613cbd00875427_54140815', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1455910385613d63bf2e2440_37070368', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1186758578613cbd008c4880_67276299', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_362131839613d63bf3104a6_36444405', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1630774379613cbd0086ac34_71402667 extends Smarty_Internal_Block
+class Block_1384893148613d63bf2dbe60_61331843 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1630774379613cbd0086ac34_71402667',
+    0 => 'Block_1384893148613d63bf2dbe60_61331843',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_1901021584613cbd00875427_54140815 extends Smarty_Internal_Block
+class Block_1455910385613d63bf2e2440_37070368 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1901021584613cbd00875427_54140815',
+    0 => 'Block_1455910385613d63bf2e2440_37070368',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -118,10 +118,8 @@ $_smarty_tpl->tpl_vars['day']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
 $_smarty_tpl->tpl_vars['day']->do_else = false;
 ?>
-                      <th style="width: 35px; fontsize: 17px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
-:AM</th>
-                      <th style="width: 35px; fontsize: 17px"><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
-:PM</th>
+                      <th><?php echo htmlspecialchars($_smarty_tpl->tpl_vars['day']->value, ENT_QUOTES, 'UTF-8');?>
+</th>
                       <?php
 }
 $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
@@ -143,10 +141,6 @@ $_smarty_tpl->tpl_vars['day']->do_else = true;
 if ($_from !== null) foreach ($_from as $_smarty_tpl->tpl_vars['day']->value) {
 $_smarty_tpl->tpl_vars['day']->do_else = false;
 ?>
-                      <td>
-                        <?php $_smarty_tpl->_subTemplateRender("file:part/insights-process-item.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
-?>
-                      </td>
                       <td>
                         <?php $_smarty_tpl->_subTemplateRender("file:part/insights-process-item.tpl", $_smarty_tpl->cache_id, $_smarty_tpl->compile_id, 0, $_smarty_tpl->cache_lifetime, array(), 0, true);
 ?>
@@ -203,12 +197,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_1186758578613cbd008c4880_67276299 extends Smarty_Internal_Block
+class Block_362131839613d63bf3104a6_36444405 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_1186758578613cbd008c4880_67276299',
+    0 => 'Block_362131839613d63bf3104a6_36444405',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

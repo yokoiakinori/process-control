@@ -45,8 +45,7 @@
                     <tr>
                       <th>ジョブ名</th>
                       {foreach $weekList as $day}
-                      <th style="width: 35px; fontsize: 17px">{$day}:AM</th>
-                      <th style="width: 35px; fontsize: 17px">{$day}:PM</th>
+                      <th>{$day}</th>
                       {/foreach}
                     </tr>
                   </thead>
@@ -55,9 +54,6 @@
                   <tr>
                       <td>{$taskItem[0]['name']}</td>
                       {foreach $weekList as $day}
-                      <td>
-                        {include file="part/insights-process-item.tpl"}
-                      </td>
                       <td>
                         {include file="part/insights-process-item.tpl"}
                       </td>
