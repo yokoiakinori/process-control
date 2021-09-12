@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-08-24 23:17:46
+/* Smarty version 3.1.39, created on 2021-09-12 11:59:34
   from '/var/www/smarty/templates/dashboard.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_6124ff8a64b772_95690518',
+  'unifunc' => 'content_613d6d16392938_52603098',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '07c253a1cfcce7c9575cf36080b6143a1feb8f00' => 
     array (
       0 => '/var/www/smarty/templates/dashboard.tpl',
-      1 => 1629814466,
+      1 => 1631415571,
       2 => 'file',
     ),
   ),
@@ -22,26 +22,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:common/sidebar.tpl' => 1,
   ),
 ),false)) {
-function content_6124ff8a64b772_95690518 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613d6d16392938_52603098 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_13422664566124ff8a55b940_66395467', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1813548085613d6d1632a0c1_68590645', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_19228359246124ff8a561a06_41515258', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1813917544613d6d1632e790_03795797', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_903118676124ff8a64a093_09716058', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_102547621613d6d163920a0_46747088', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_13422664566124ff8a55b940_66395467 extends Smarty_Internal_Block
+class Block_1813548085613d6d1632a0c1_68590645 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_13422664566124ff8a55b940_66395467',
+    0 => 'Block_1813548085613d6d1632a0c1_68590645',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -53,12 +53,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_19228359246124ff8a561a06_41515258 extends Smarty_Internal_Block
+class Block_1813917544613d6d1632e790_03795797 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_19228359246124ff8a561a06_41515258',
+    0 => 'Block_1813917544613d6d1632e790_03795797',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -147,7 +147,11 @@ $_smarty_tpl->tpl_vars['currentProcess']->do_else = false;
                       <div class="card-body">
                         <p class="card-text">
                         開始:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['start_time'], ENT_QUOTES, 'UTF-8');?>
-
+ 
+                        </p>
+                        <p class="card-text">
+                        終了:<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['currentProcess']->value['end_time'], ENT_QUOTES, 'UTF-8');?>
+ 
                         </p>
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
                            工程入力の修正
@@ -328,12 +332,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_903118676124ff8a64a093_09716058 extends Smarty_Internal_Block
+class Block_102547621613d6d163920a0_46747088 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_903118676124ff8a64a093_09716058',
+    0 => 'Block_102547621613d6d163920a0_46747088',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

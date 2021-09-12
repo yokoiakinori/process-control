@@ -1,18 +1,18 @@
 <?php
-/* Smarty version 3.1.39, created on 2021-09-12 11:19:43
+/* Smarty version 3.1.39, created on 2021-09-12 11:23:16
   from '/var/www/smarty/templates/insights.tpl' */
 
 /* @var Smarty_Internal_Template $_smarty_tpl */
 if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
   'version' => '3.1.39',
-  'unifunc' => 'content_613d63bf310d49_65430800',
+  'unifunc' => 'content_613d64947eb9d1_45561037',
   'has_nocache_code' => false,
   'file_dependency' => 
   array (
     '25f25d8d39d9aaae3d4cb004a126768b08e4844c' => 
     array (
       0 => '/var/www/smarty/templates/insights.tpl',
-      1 => 1631413180,
+      1 => 1631413394,
       2 => 'file',
     ),
   ),
@@ -23,26 +23,26 @@ if ($_smarty_tpl->_decodeProperties($_smarty_tpl, array (
     'file:part/insights-process-item.tpl' => 1,
   ),
 ),false)) {
-function content_613d63bf310d49_65430800 (Smarty_Internal_Template $_smarty_tpl) {
+function content_613d64947eb9d1_45561037 (Smarty_Internal_Template $_smarty_tpl) {
 $_smarty_tpl->_loadInheritance();
 $_smarty_tpl->inheritance->init($_smarty_tpl, false);
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1384893148613d63bf2dbe60_61331843', 'meta');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1525899443613d64947b3505_34833257', 'meta');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1455910385613d63bf2e2440_37070368', 'content');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_1349749358613d64947b9ce2_38101681', 'content');
 ?>
  <?php 
-$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_362131839613d63bf3104a6_36444405', 'script');
+$_smarty_tpl->inheritance->instanceBlock($_smarty_tpl, 'Block_31285445613d64947ea4b8_62415371', 'script');
 ?>
 
 <?php }
 /* {block 'meta'} */
-class Block_1384893148613d63bf2dbe60_61331843 extends Smarty_Internal_Block
+class Block_1525899443613d64947b3505_34833257 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'meta' => 
   array (
-    0 => 'Block_1384893148613d63bf2dbe60_61331843',
+    0 => 'Block_1525899443613d64947b3505_34833257',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -54,12 +54,12 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
 }
 /* {/block 'meta'} */
 /* {block 'content'} */
-class Block_1455910385613d63bf2e2440_37070368 extends Smarty_Internal_Block
+class Block_1349749358613d64947b9ce2_38101681 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'content' => 
   array (
-    0 => 'Block_1455910385613d63bf2e2440_37070368',
+    0 => 'Block_1349749358613d64947b9ce2_38101681',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
@@ -104,7 +104,9 @@ public function callBlock(Smarty_Internal_Template $_smarty_tpl) {
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">進捗状況</h3>
+                <h3 class="card-title">進捗状況：<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['weekList']->value[0], ENT_QUOTES, 'UTF-8');?>
+~<?php echo htmlspecialchars($_smarty_tpl->tpl_vars['weekList']->value[6], ENT_QUOTES, 'UTF-8');?>
+</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -197,12 +199,12 @@ $_smarty_tpl->smarty->ext->_foreach->restore($_smarty_tpl, 1);?>
 }
 /* {/block 'content'} */
 /* {block 'script'} */
-class Block_362131839613d63bf3104a6_36444405 extends Smarty_Internal_Block
+class Block_31285445613d64947ea4b8_62415371 extends Smarty_Internal_Block
 {
 public $subBlocks = array (
   'script' => 
   array (
-    0 => 'Block_362131839613d63bf3104a6_36444405',
+    0 => 'Block_31285445613d64947ea4b8_62415371',
   ),
 );
 public function callBlock(Smarty_Internal_Template $_smarty_tpl) {

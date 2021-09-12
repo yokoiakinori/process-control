@@ -94,6 +94,28 @@ class JobDao
         return Db::groupselect($sql,$arr);
     }
 
+    public static function getProcessTotalTimeDao($repid)
+    {
+        $sql = "SELECT ";
+        $sql .= "job.id";
+        $sql .= ", job.id";
+        $sql .= ", job.name";
+        $sql .= ", TIMEDIFF(process.end_time,process.start_time) AS `process_time`";
+        $sql .= " FROM ";
+        $sql .= "`job` ";
+        $sql .= "LEFT JOIN ";
+        $sql .= " `process` ";
+        $sql .= " ON ";
+        $sql .= "job.id = process.job_id ";
+        $sql .= "WHERE job.rep_id = :rep_id ";
+
+        $arr = array();
+        $arr[':rep_id'] = $repid;
+
+
+        return Db::groupselect($sql,$arr);
+    }
+
     public static function referenceJobDao($referenceObj)
     {
         $sql = "SELECT ";

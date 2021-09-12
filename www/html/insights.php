@@ -20,7 +20,11 @@ try{
     Template::assign("taskList",$taskList);
     $processList = ProcessController::processNameList();
     Template::assign("processList",$processList);
+
     Template::assign("weekList",thisWeekReturn());
+
+    $processTotalTimeList = JobController::processTotalTimeList();
+    Template::assign("processTotalTimeList",$processTotalTimeList);
 
 }catch(\Exception $e){
     Template::exception($e);
