@@ -36,7 +36,7 @@
           <div class="col-12">
             <div class="card">
               <div class="card-header">
-                <h3 class="card-title">進捗状況</h3>
+                <h3 class="card-title">進捗状況：{$weekList[0]}~{$weekList[6]}</h3>
               </div>
               <!-- /.card-header -->
               <div class="card-body p-0">
@@ -45,8 +45,7 @@
                     <tr>
                       <th>ジョブ名</th>
                       {foreach $weekList as $day}
-                      <th style="width: 35px; fontsize: 17px">{$day}:AM</th>
-                      <th style="width: 35px; fontsize: 17px">{$day}:PM</th>
+                      <th>{$day}</th>
                       {/foreach}
                     </tr>
                   </thead>
@@ -55,9 +54,6 @@
                   <tr>
                       <td>{$taskItem[0]['name']}</td>
                       {foreach $weekList as $day}
-                      <td>
-                        {include file="part/insights-process-item.tpl"}
-                      </td>
                       <td>
                         {include file="part/insights-process-item.tpl"}
                       </td>

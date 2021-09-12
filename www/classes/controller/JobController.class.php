@@ -102,6 +102,14 @@ class JobController
         return $objModel->getTaskModel(intval($repid));
     }
 
+    static public function processTotalTimeList()
+    {
+        $objModel = new JobModel();
+        $loginUser=LoginController::getLoginUser();
+        $repid=$loginUser->getId();
+        return $objModel->getProcessTotalTimeModel(intval($repid));
+    }
+
     static public function clientList()
     {
         return JobDao::getClientDao();

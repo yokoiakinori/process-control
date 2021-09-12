@@ -60,7 +60,10 @@
                       </div>
                       <div class="card-body">
                         <p class="card-text">
-                        開始:{$currentProcess['start_time']}
+                        開始:{$currentProcess['start_time']} 
+                        </p>
+                        <p class="card-text">
+                        終了:{$currentProcess['end_time']} 
                         </p>
                         <button type="button" class="btn btn-default" data-toggle="modal" data-target="#modal-default">
                            工程入力の修正
